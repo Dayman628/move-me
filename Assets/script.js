@@ -1,22 +1,22 @@
 var movers = []
 var currentLocation = {
-    longitude: 0,
-    latitude: 0
+    lat: 33.448376,
+    lng: -112.074036
 };
 
 // Obtains device location coordinates
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
-            currentLocation.longitude = position.coords.longitude;
-            currentLocation.latitude = position.coords.latitude;
+            currentLocation.lng = position.coords.longitude;
+            currentLocation.lat = position.coords.latitude;
         });
     }
 }
 
 // Get results on a yelp search (search term, array to push results to)
 function searchYelp(search, arr) {
-    var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + search +"&latitude=" + currentLocation.latitude + "&longitude=" + currentLocation.longitude;
+    var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + search + "&latitude=" + currentLocation.latitude + "&longitude=" + currentLocation.longitude;
     $.ajax({
         url: queryURL,
         headers: {
@@ -37,8 +37,15 @@ function searchYelp(search, arr) {
     })
 }
 
+// code that initializes the google map
+var map;
+function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: currentLocation,
+        zoom: 12
+    });
+}
 // Add code for when user selects "use my current location"
 // getLocation();
 
 // When address search bar is added - Google API can autocomplete addresses and convert them to coordinates and update the currentLocation variable
-

@@ -1,41 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Move Me</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  </head>
-  <body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Move Me</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
   <section class="section">
     <div class="container level">
-        <!-- this is where our ui will go -->
-        <div class="column level-left">
-            <ul>
-                <li>movers</li>
-                <li>storage</li>
-                <li>supplies</li>
-                <li>rent a truck</li>
-            </ul>
+      <!-- this is where our ui will go -->
+      <div class="column level-left">
+        <ul>
+          <li>movers</li>
+          <li>storage</li>
+          <li>supplies</li>
+          <li>rent a truck</li>
+        </ul>
 
-        </div>
-        <!-- this is for the map -->
-        <div class="column level-right">
-            the map will go here
-        </div>
+      </div>
+      <!-- this is for the map -->
+      <div id="map" class="column level-right" style="height: 80vh;">
+        the map will go here
+      </div>
     </div>
     <!-- this is the footer -->
     <footer class="footer">
-        <div class="content has-text-centered">
-          <p>
-            <strong>Move Me</strong> by <a href="https://twitter.com/rudebroodpdx?lang=en" target="_blank">Rude Crude Brood</a>. The source code is licensed
-            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>
-          </p>
-        </div>
-      </footer>
+      <div class="content has-text-centered">
+        <p>
+          <strong>Move Me</strong> by <a href="https://twitter.com/rudebroodpdx?lang=en" target="_blank">Rude Crude
+            Brood</a>. The source code is licensed
+          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>
+        </p>
+      </div>
+    </footer>
   </section>
+
+
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDetpwAhpDkX4o4m6ZJRGqMedOgP-_PvXw&callback=initMap"
+    async defer></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="assets/script.js"></script>
-  </body>
+  <script src="assets/script.js"></script>
+</body>
+
 </html>
