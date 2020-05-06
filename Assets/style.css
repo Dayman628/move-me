@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+  }
+
+.hidden {
+    display: none;
+}
+  
+  .left-half {
+    width: 30%;
+  }
+  .right-half {
+    width: 70%;
+  }
+
+  footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden; 
+    text-align: center;
+}
