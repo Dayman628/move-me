@@ -17,8 +17,8 @@
   </div>
 
   <!-- This is the front page, which will show on default -->
-  <section class = "section front-page">
-    <!-- add MOVEME at low apacity up top -->
+  <section class = "section front-page hidden">
+    <!-- add MOVEME at low opacity up top -->
     <div class="field is-grouped">
       <p class="control is-expanded">
         <input class="input" id="userAddress" type="text" placeholder="Address">
@@ -36,12 +36,15 @@
   </section>
 
   <!-- This is the second page, that becomes visible when user submits address -->
-  <section class="section hidden">
+  <section class="section">
+    <!-- add weather in navbar -->
+    
     <div class="container level">
       <!-- this is where our ui will go -->
       <div class="column buttons left-half">
         <ul>
           <!-- work with SASS to create larger font, padding, etc. -->
+          <!-- be able to deselect the defaults, change  -->
           <li><button class="button is-info is-rounded" id="movers-btn"><i
                 class="fas fa-people-carry"></i>Movers</button></li>
           <li><button class="button is-info is-rounded" id="storage-btn"><i
@@ -64,7 +67,8 @@
       <footer class="footer">
         <div class="content has-text-centered">
           <p></p>
-          <p>
+          <p> 
+            <!-- twitter link? -->
             <strong>Move Me</strong> by <a href="https://twitter.com/rudebroodpdx?lang=en" target="_blank">Rude Crude
               Brood</a>. The source code is licensed
             <a href="http://opensource.org/licenses/mit-license.php">MIT</a>

@@ -11,10 +11,11 @@
     color: rgb(37, 24, 24);
 }
   
-  .left-half {
+.left-half {
     width: 30%;
   }
-  .right-half {
+  
+.right-half {
     width: 70%;
   }
 
