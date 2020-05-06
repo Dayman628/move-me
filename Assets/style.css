@@ -2,6 +2,12 @@
     box-sizing: border-box;
   }
 
+.footer {
+    background-color: #443232;
+    padding: 1.5rem 6rem;
+    color: orange;
+}
+
 .hidden {
     display: none;
 }
@@ -54,4 +60,3 @@
     min-width: 50%;
     min-height: 50%;
   }
-
