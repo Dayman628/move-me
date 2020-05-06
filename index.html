@@ -12,16 +12,31 @@
 
 <body>
 
+  <div id="bg">
+    <img src="./Assets/orange-gradient.jpg" alt="">
+  </div>
+
   <!-- This is the front page, which will show on default -->
-  <section class = "section front-page hidden">
-
-
-
+  <section class = "section front-page">
+    <!-- add MOVEME at low apacity up top -->
+    <div class="field is-grouped">
+      <p class="control is-expanded">
+        <input class="input" id="userAddress" type="text" placeholder="Address">
+      </p>
+      <p class="control">
+        <a class="button">
+          Search
+        </a>
+      </p>
+    </div>
+    <br>
+    <br>
+    <!-- change font -->
+    <p>Moving made easier</p>
   </section>
 
-
-
-  <section class="section">
+  <!-- This is the second page, that becomes visible when user submits address -->
+  <section class="section hidden">
     <div class="container level">
       <!-- this is where our ui will go -->
       <div class="column buttons left-half">
