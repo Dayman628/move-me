@@ -2,6 +2,12 @@
     box-sizing: border-box;
   }
 
+.footer {
+    background-color: #443232;
+    padding: 1.5rem 6rem;
+    color: orange;
+}
+
 .hidden {
     display: none;
 }
@@ -11,10 +17,11 @@
     color: rgb(37, 24, 24);
 }
   
-  .left-half {
+.left-half {
     width: 30%;
   }
-  .right-half {
+  
+.right-half {
     width: 70%;
   }
 
@@ -53,4 +60,3 @@
     min-width: 50%;
     min-height: 50%;
   }
-
