@@ -20,7 +20,7 @@
 
 
   <!-- This is the front page, which will show on default -->
-  <section class = "section front-page hidden">
+  <section class="section front-page hidden">
     <!-- add MOVEME at low opacity up top -->
     <div class="field is-grouped">
       <p class="control is-expanded">
@@ -40,20 +40,20 @@
 
   <!-- This is the second page, that becomes visible when user submits address -->
   <section class="section">
-    
+
     <!-- add weather in navbar -->
-    
+
     <div class="container level">
-      
+
       <!-- this is the search bar for the address on the main page -->
       <div class="wrap">
         <div class="search">
-           <input type="text" class="searchTerm" placeholder="Where are you moving from?">
-           <button type="submit" class="searchButton">
-             <i class="fa fa-search"></i>
+          <input type="text" class="searchTerm" placeholder="Where are you moving from?">
+          <button type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
           </button>
         </div>
-     </div>
+      </div>
       <!-- this is where our ui will go -->
       <div class="column buttons left-half">
         <ul>
@@ -68,7 +68,7 @@
           <li><button class="button is-info is-rounded" id="rentTruck-btn"><i class="fas fa-truck"></i>Rent a
               Truck</button></li>
         </ul>
-        
+
       </div>
       <!-- this is for the map -->
       <div id="map" class="column" style="height: 80vh;">
@@ -77,25 +77,27 @@
     </div>
   </section>
 
-      <!-- this is the footer -->
-      <footer class="footer">
-        <div class="content has-text-centered">
-          <p></p>
-          <p> 
-            <!-- twitter link? -->
-            <strong style="color:coral">Move Me</strong> by <a href="https://twitter.com/rudebroodpdx?lang=en" target="_blank">Rude Crude
-              Brood</a>. The source code is licensed
-            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>
-          </p>
-        </div>
-      </footer>
+  <!-- this is the footer -->
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p></p>
+      <p>
+        <!-- twitter link? -->
+        <strong style="color:coral">Move Me</strong> by <a href="https://twitter.com/rudebroodpdx?lang=en"
+          target="_blank">Rude Crude
+          Brood</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>
+      </p>
+    </div>
+  </footer>
 
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDetpwAhpDkX4o4m6ZJRGqMedOgP-_PvXw&libraries=places&callback=initMap"
-    async defer></script>
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="Assets/yelp.js"></script>
   <script src="assets/script.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDetpwAhpDkX4o4m6ZJRGqMedOgP-_PvXw&callback=initMap&libraries=places"
+    async defer></script>
 </body>
 
 </html>
