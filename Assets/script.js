@@ -2,7 +2,7 @@
 // get APIs working
 // add improvements and functionalities once basic MVP works
 
-var movers = []
+
 var currentLocation = {
     lat: 33.448376,
     lng: -112.074036
@@ -17,8 +17,6 @@ function getLocation() {
         });
     }
 }
-
-
 
 // code that initializes the google map
 var map;
