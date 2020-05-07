@@ -5,7 +5,7 @@ var trucks = [];
 
 // Get results on a yelp search (search term, array to push results to)
 function searchYelp(search, arr) {
-    var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + search + "&latitude=" + currentLocation.latitude + "&longitude=" + currentLocation.longitude;
+    var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + search + "&latitude=" + currentLocation.lat + "&longitude=" + currentLocation.lng;
     $.ajax({
         url: queryURL,
         headers: {
@@ -26,3 +26,12 @@ function searchYelp(search, arr) {
         }
     })
 }
+
+function listResults(arr) {
+    for (var i = 0; i < arr.length; i++) {
+        
+    }
+}
+
+searchYelp(movers);
+
