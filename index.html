@@ -12,8 +12,8 @@
 
 <body>
 
-  <div id="bg" class="">
-    <img src="./Assets/orange-gradient.jpg" alt="hidden">
+  <div id="bg" class = "hidden">
+    <img src="./Assets/orange-gradient.jpg">
   </div>
 
   <!-- This is the front page, which will show on default -->
@@ -41,22 +41,15 @@
     <p>Moving made easier</p>
   </section>
 
+
+
+
+
   <!-- This is the second page, that becomes visible when user submits address -->
   <section class="section">
+    <nav class="navbar is-fixed-top">
 
     <!-- add weather in navbar -->
-
-    <div class="container level">
-
-      <!-- this is the search bar for the address on the main page -->
-      <div class="wrap">
-        <div class="search">
-          <input type="text" class="searchTerm" placeholder="Where are you moving from?">
-          <button type="submit" class="searchButton">
-            <i class="fa fa-search"></i>
-          </button>
-        </div>
-      </div>
     <div class="navbar">
       <!-- this is the search bar for the address on the main page -->
       <div id="currentHome" class="search nav-item">
@@ -65,6 +58,7 @@
            <i class="fa fa-search"></i>
         </button>
       </div>
+      
       <!-- this is another search bar for the navbar -->
       <div id="nextHome" class="search nav-item">
         <input type="text" class="searchTerm" placeholder="Where are you moving to?">
@@ -78,37 +72,35 @@
           weather api placeholder
         </p>
       </div>
-   </div>
+    </nav>
     
     <div class="container level">
 
-      <!-- this is the search bar for the address on the main page -->
-     
       <!-- this is where our ui will go -->
       <div class="column buttons left-half">
         <ul>
           <!-- work with SASS to create larger font, padding, etc. -->
           <li>
             <label class="checkbox">
-              <input type="checkbox">
+              <input type="checkbox" class="checkbox">
               <i class="fas fa-people-carry"></i> Movers
             </label>
           </li>
           <li>
             <label class="checkbox">
-              <input type="checkbox">
+              <input type="checkbox"  class="checkbox">
               <i class="fas fa-warehouse"></i> Storage
             </label>
           </li>
           <li>
             <label class="checkbox">
-              <input type="checkbox">
+              <input type="checkbox"  class="checkbox">
               <i class="fas fa-box-open"></i> Supplies
             </label>
           </li>
           <li>
             <label class="checkbox">
-              <input type="checkbox">
+              <input type="checkbox" class="checkbox">
               <i class="fas fa-truck"></i> Rent a Truck
             </label>
           </li>
