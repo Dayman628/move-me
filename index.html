@@ -16,6 +16,9 @@
     <img src="./Assets/orange-gradient.jpg" alt="">
   </div>
 
+
+
+
   <!-- This is the front page, which will show on default -->
   <section class = "section front-page hidden">
     <!-- add MOVEME at low opacity up top -->
@@ -24,10 +27,13 @@
         <input class="input" id="userAddress" type="text" placeholder="Address">
       </p>
       <p class="control">
-        <a class="button">
+        <a class="button" id="searchBtn">
           Search
         </a>
       </p>
+      <a class="button" id="skip">
+        Skip
+      </a>
     </div>
     <br>
     <br>
@@ -37,9 +43,20 @@
 
   <!-- This is the second page, that becomes visible when user submits address -->
   <section class="section">
+    
     <!-- add weather in navbar -->
     
     <div class="container level">
+      
+      <!-- this is the search bar for the address on the main page -->
+      <div class="wrap">
+        <div class="search">
+           <input type="text" class="searchTerm" placeholder="Where are you moving from?">
+           <button type="submit" class="searchButton">
+             <i class="fa fa-search"></i>
+          </button>
+        </div>
+     </div>
       <!-- this is where our ui will go -->
       <div class="column buttons left-half">
         <ul>
@@ -85,13 +102,12 @@
           <p></p>
           <p> 
             <!-- twitter link? -->
-            <strong>Move Me</strong> by <a href="https://twitter.com/rudebroodpdx?lang=en" target="_blank">Rude Crude
+            <strong style="color:coral">Move Me</strong> by <a href="https://twitter.com/rudebroodpdx?lang=en" target="_blank">Rude Crude
               Brood</a>. The source code is licensed
             <a href="http://opensource.org/licenses/mit-license.php">MIT</a>
           </p>
         </div>
       </footer>
-
 
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDetpwAhpDkX4o4m6ZJRGqMedOgP-_PvXw&callback=initMap"

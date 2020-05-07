@@ -2,6 +2,14 @@
     box-sizing: border-box;
   }
 
+.footer {
+    background-color: #443232;
+    padding: 1.5rem 6rem;
+    color: orange;
+}
+
+
+
 .hidden {
     display: none;
 }
@@ -58,3 +66,4 @@
   .ul {
     font-size: 20px;
   }
+  
