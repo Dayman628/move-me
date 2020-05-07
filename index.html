@@ -6,18 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Move Me</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Raleway&display=swap" rel="stylesheet">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <link rel="stylesheet" href="./Assets/style.css">
 </head>
 
 <body>
-
-  <div id="bg" class = "hidden">
-    <img src="./Assets/orange-gradient.jpg">
+  <div id="bg" class="">
+    <img src="./Assets/red-orange.jpg">
   </div>
 
   <!-- This is the front page, which will show on default -->
-  <section class="section front-page hidden">
+  <section class="section front-page">
+    <p class="title">MOVE ME </p>
     <!-- add MOVEME at low opacity up top -->
     <div class="field is-grouped">
       <p class="control is-expanded">
@@ -28,52 +29,55 @@
           Search
         </a>
       </p>
-      <a class="button" id="skip">
-        Skip
-      </a>
-      <a class="button" id="currentAddress">
-        Get current address
-      </a>
     </div>
+
+    <!-- Skip OR get current address? -->
+    <a class="button" id="skip">
+      Skip
+    </a>
+    <a class="button" id="currentAddress">
+      Get current address
+    </a>
     <br>
     <br>
-    <!-- change font -->
-    <p>Moving made easier</p>
+    <br>
+    <br>
+    <p class="motto">Moving made easier.</p>
   </section>
 
 
 
 
-
   <!-- This is the second page, that becomes visible when user submits address -->
-  <section class="section">
+
+  <section class="section hidden">
     <nav class="navbar is-fixed-top">
 
-    <!-- add weather in navbar -->
-    <div class="navbar">
-      <!-- this is the search bar for the address on the main page -->
-      <div id="currentHome" class="search nav-item">
-         <input type="text" class="searchTerm" placeholder="Where are you moving from?">
-         <button type="submit" class="searchButton">
-           <i class="fa fa-search"></i>
-        </button>
-      </div>
-      
-      <!-- this is another search bar for the navbar -->
-      <div id="nextHome" class="search nav-item">
-        <input type="text" class="searchTerm" placeholder="Where are you moving to?">
-        <button type="submit" class="searchButton">
-          <i class="fa fa-search"></i>
-       </button>
-     </div>
-      <!-- this is where the weather will go -->
-      <div id="weatherSpot" class="nav-item nav-right">
-        <p>
-          weather api placeholder
-        </p>
-      </div>
+      <!-- add weather in navbar -->
+      <div class="navbar">
+        <!-- this is the search bar for the address on the main page -->
+        <div id="currentHome" class="search nav-item">
+          <input type="text" class="searchTerm" placeholder="Where are you moving from?">
+          <button type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+
+        <!-- this is another search bar for the navbar -->
+        <div id="nextHome" class="search nav-item">
+          <input type="text" class="searchTerm" placeholder="Where are you moving to?">
+          <button type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+        <!-- this is where the weather will go -->
+        <div id="weatherSpot" class="nav-item nav-right">
+          <p>
+            weather api placeholder
+          </p>
+        </div>
     </nav>
-    
+
     <div class="container level">
 
       <!-- this is where our ui will go -->
@@ -88,13 +92,13 @@
           </li>
           <li>
             <label class="checkbox">
-              <input type="checkbox"  class="checkbox">
+              <input type="checkbox" class="checkbox">
               <i class="fas fa-warehouse"></i> Storage
             </label>
           </li>
           <li>
             <label class="checkbox">
-              <input type="checkbox"  class="checkbox">
+              <input type="checkbox" class="checkbox">
               <i class="fas fa-box-open"></i> Supplies
             </label>
           </li>
