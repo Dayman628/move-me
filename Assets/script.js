@@ -4,3 +4,7 @@
 
 
 
+var currentLocation = {
+    lat: 33.448376,
+    lng: -112.074036
+};

@@ -5,11 +5,6 @@
 // }
 // google.maps.event.addDomListener(window, 'load', initSearch);
 
-var currentLocation = {
-    lat: 33.448376,
-    lng: -112.074036
-};
-
 // Obtains device location coordinates
 function getLocation() {
     if (navigator.geolocation) {
