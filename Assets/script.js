@@ -8,3 +8,8 @@ var currentLocation = {
     lat: 33.448376,
     lng: -112.074036
 };
+
+$("#skip").on("click", function() {
+    $(".front-page").attr("class", "hidden");
+    $(".main-page").removeClass("hidden");
+});
