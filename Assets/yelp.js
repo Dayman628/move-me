@@ -24,12 +24,16 @@ function searchYelp(search, arr) {
             object.rating = response.businesses[i].rating;
             arr.push(object);
         }
+        console.log(arr);
+        listResults(arr);
     })
 }
 
 function listResults(arr) {
+    console.log(arr);
     for (var i = 0; i < arr.length; i++) {
-        
+        listItem = $("<a class='list-item'>" + arr[i].name + "</a>");
+        $("#results").append(listItem);
     }
 }
 
