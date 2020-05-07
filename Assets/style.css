@@ -43,6 +43,13 @@
     color: white;
 }
 
+.title {
+  font-family: 'Amatic SC', cursive;
+  color: white;
+  margin-top: 0px;
+  font-size: 120px;
+}
+
 #bg {
     position: fixed; 
     top: -50%; 
@@ -68,4 +75,12 @@
 input.checkbox {
   width: 20px;
   height: 20px;
+}
+
+img {
+  opacity: 0.9;
+}
+
+.motto {
+  font-family: 'Raleway', sans-serif;
 }
