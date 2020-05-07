@@ -1,7 +1,10 @@
 
 var APIKey = "644e2fd49d4e3e04ae6b482ca8428be6";
+
+var longitude = currentLocation.lon;
+var latitude = currentLocation.lat;
     
-var queryURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKey;
+var queryURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=" + APIKey;
   
 $.ajax({
   url: queryURL,
