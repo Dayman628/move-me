@@ -12,12 +12,9 @@
 
 <body>
 
-  <div id="bg" class = "hidden">
-    <img src="./Assets/orange-gradient.jpg" alt="">
+  <div id="bg" class = "">
+    <img src="./Assets/orange-gradient.jpg" alt="hidden">
   </div>
-
-
-
 
   <!-- This is the front page, which will show on default -->
   <section class = "section front-page hidden">
@@ -33,6 +30,9 @@
       </p>
       <a class="button" id="skip">
         Skip
+      </a>
+      <a class="button" id="currentAddress">
+        Get current address
       </a>
     </div>
     <br>
@@ -61,7 +61,6 @@
       <div class="column buttons left-half">
         <ul>
           <!-- work with SASS to create larger font, padding, etc. -->
-          <!-- be able to deselect the defaults, change  -->
           <li>
             <label class="checkbox">
               <input type="checkbox">
@@ -87,6 +86,12 @@
             </label>
           </li>
         </ul>
+        <br>
+        <br>
+
+        <div class = "results">
+        Search Results will go below
+        </div>
         
       </div>
       <!-- this is for the map -->
