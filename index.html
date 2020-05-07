@@ -7,18 +7,19 @@
   <title>Move Me</title>
   <link rel="icon" type="image/ico" href="Assets/truck.ico">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Raleway&display=swap" rel="stylesheet">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <link rel="stylesheet" href="./assets/style.css">
 </head>
 
 <body>
-
-  <div id="bg" class="hidden">
-    <img src="./Assets/orange-gradient.jpg">
+  <div id="bg" class="">
+    <img src="./Assets/red-orange.jpg">
   </div>
 
   <!-- This is the front page, which will show on default -->
-  <section class="section front-page hidden">
+  <section class="section front-page">
+    <p class="title">MOVE ME </p>
     <!-- add MOVEME at low opacity up top -->
     <div class="field is-grouped">
       <p class="control is-expanded">
@@ -29,25 +30,28 @@
           Search
         </a>
       </p>
-      <a class="button" id="skip">
-        Skip
-      </a>
-      <a class="button" id="currentAddress">
-        Get current address
-      </a>
     </div>
+
+    <!-- Skip OR get current address? -->
+    <a class="button" id="skip">
+      Skip
+    </a>
+    <a class="button" id="currentAddress">
+      Get current address
+    </a>
     <br>
     <br>
-    <!-- change font -->
-    <p>Moving made easier</p>
+    <br>
+    <br>
+    <p class="motto">Moving made easier.</p>
   </section>
 
 
 
 
-
   <!-- This is the second page, that becomes visible when user submits address -->
-  <section class="section">
+
+  <section class="section hidden">
     <nav class="navbar is-fixed-top">
 
       <!-- add weather in navbar -->
@@ -109,7 +113,7 @@
         <br>
         <br>
 
-        <div class="results">
+        <div id="results" class="list is-hoverable">
           Search Results will go below
         </div>
 
@@ -137,12 +141,12 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="./assets/script.js"></script>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDetpwAhpDkX4o4m6ZJRGqMedOgP-_PvXw&libraries=places&callback=initMap"
-    async defer></script>
   <script src="./assets/googlemap.js"></script>
   <script src="./assets/yelp.js"></script>
   <script src="./assets/openweather.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDetpwAhpDkX4o4m6ZJRGqMedOgP-_PvXw&libraries=places&callback=initMap"
+    async defer></script>
 </body>
 
 </html>

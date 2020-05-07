@@ -22,14 +22,18 @@ function searchYelp(search, arr) {
             object.phone = response.businesses[i].phone;
             object.coords = response.businesses[i].coordinates;
             object.rating = response.businesses[i].rating;
+            object.url = response.businesses[i].url;
             arr.push(object);
         }
+        listResults(arr);
     })
 }
 
 function listResults(arr) {
+    console.log(arr);
     for (var i = 0; i < arr.length; i++) {
-        
+        listItem = $("<a class='list-item'>" + arr[i].name + "</a>");
+        $("#results").append(listItem);
     }
 }
 
