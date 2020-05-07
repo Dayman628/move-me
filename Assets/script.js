@@ -19,13 +19,13 @@ function getLocation() {
 }
 
 // code that initializes the google map
-var map;
-function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: currentLocation,
-        zoom: 12
-    });
-}
+// var map;
+// function initMap() {
+//     map = new google.maps.Map(document.getElementById('map'), {
+//         center: currentLocation,
+//         zoom: 12
+//     });
+// }
 // Add code for when user selects "use my current location"
 // getLocation();
 
