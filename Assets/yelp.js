@@ -22,9 +22,9 @@ function searchYelp(search, arr) {
             object.phone = response.businesses[i].phone;
             object.coords = response.businesses[i].coordinates;
             object.rating = response.businesses[i].rating;
+            object.url = response.businesses[i].url;
             arr.push(object);
         }
-        console.log(arr);
         listResults(arr);
     })
 }
