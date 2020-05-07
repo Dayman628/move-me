@@ -8,8 +8,6 @@
     color: orange;
 }
 
-
-
 .hidden {
     display: none;
 }
@@ -62,3 +60,8 @@
     min-width: 50%;
     min-height: 50%;
   }
+
+  .ul {
+    font-size: 20px;
+  }
+  

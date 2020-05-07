@@ -12,12 +12,9 @@
 
 <body>
 
-  <div id="bg">
-    <img src="./Assets/orange-gradient.jpg" alt="">
+  <div id="bg" class = "">
+    <img src="./Assets/orange-gradient.jpg" alt="hidden">
   </div>
-
-
-
 
   <!-- This is the front page, which will show on default -->
   <section class="section front-page hidden">
@@ -27,10 +24,16 @@
         <input class="input" id="userAddress" type="text" placeholder="Address">
       </p>
       <p class="control">
-        <a class="button">
+        <a class="button" id="searchBtn">
           Search
         </a>
       </p>
+      <a class="button" id="skip">
+        Skip
+      </a>
+      <a class="button" id="currentAddress">
+        Get current address
+      </a>
     </div>
     <br>
     <br>
@@ -40,35 +43,61 @@
 
   <!-- This is the second page, that becomes visible when user submits address -->
   <section class="section">
-
-    <!-- add weather in navbar -->
-
+    <div class="navbar">
+      <div id="searchBar" class="search nav-item">
+         <input type="text" class="searchTerm" placeholder="Where are you moving from?">
+         <button type="submit" class="searchButton">
+           <i class="fa fa-search"></i>
+        </button>
+      </div>
+      <!-- this is where the weather will go -->
+      <div id="weatherSpot" class="nav-item nav-right">
+        <p>
+          weather api placeholder
+        </p>
+      </div>
+   </div>
+    
     <div class="container level">
 
       <!-- this is the search bar for the address on the main page -->
-      <div class="wrap">
-        <div class="search">
-          <input type="text" class="searchTerm" placeholder="Where are you moving from?">
-          <button type="submit" class="searchButton">
-            <i class="fa fa-search"></i>
-          </button>
-        </div>
-      </div>
+     
       <!-- this is where our ui will go -->
       <div class="column buttons left-half">
         <ul>
           <!-- work with SASS to create larger font, padding, etc. -->
-          <!-- be able to deselect the defaults, change  -->
-          <li><button class="button is-info is-rounded" id="movers-btn"><i
-                class="fas fa-people-carry"></i>Movers</button></li>
-          <li><button class="button is-info is-rounded" id="storage-btn"><i
-                class="fas fa-warehouse"></i>Storage</button></li>
-          <li><button class="button is-info is-rounded" id="supplies-btn"><i
-                class="fas fa-box-open"></i>Supplies</button></li>
-          <li><button class="button is-info is-rounded" id="rentTruck-btn"><i class="fas fa-truck"></i>Rent a
-              Truck</button></li>
+          <li>
+            <label class="checkbox">
+              <input type="checkbox">
+              <i class="fas fa-people-carry"></i> Movers
+            </label>
+          </li>
+          <li>
+            <label class="checkbox">
+              <input type="checkbox">
+              <i class="fas fa-warehouse"></i> Storage
+            </label>
+          </li>
+          <li>
+            <label class="checkbox">
+              <input type="checkbox">
+              <i class="fas fa-box-open"></i> Supplies
+            </label>
+          </li>
+          <li>
+            <label class="checkbox">
+              <input type="checkbox">
+              <i class="fas fa-truck"></i> Rent a Truck
+            </label>
+          </li>
         </ul>
+        <br>
+        <br>
 
+        <div class = "results">
+        Search Results will go below
+        </div>
+        
       </div>
       <!-- this is for the map -->
       <div id="map" class="column" style="height: 80vh;">
