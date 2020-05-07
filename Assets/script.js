@@ -26,7 +26,7 @@ function initMap() {
         zoom: 12
     });
 }
-// Add code for when user selects "use my current location"
-// getLocation();
+Add code for when user selects "use my current location"
+getLocation();
 
-// When address search bar is added - Google API can autocomplete addresses and convert them to coordinates and update the currentLocation variable
+When address search bar is added - Google API can autocomplete addresses and convert them to coordinates and update the currentLocation variable
