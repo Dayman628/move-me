@@ -18,8 +18,6 @@ function getLocation() {
     }
 }
 
-
-
 // code that initializes the google map
 var map;
 function initMap() {
