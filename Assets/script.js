@@ -19,10 +19,7 @@ var mainScreen = false;
 
 // function for when the current location changes
 function locationChanged() {
-    searchYelp('movers', movers);
-    searchYelp('storage', storage);
-    searchYelp('packing supplies', supplies);
-    searchYelp('truck rental', movers);
+    completeSearches();
 }
 
 // reveal the main page

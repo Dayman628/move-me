@@ -1,12 +1,27 @@
 var searchMovers = true;
 var searchStorage = true;
-var searchStorage = true;
+var searchSupplies = true;
 var searchTrucks = true;
 
 var movers = [];
 var storage = [];
 var supplies = [];
 var trucks = [];
+
+function completeSearches() {
+    if (searchMovers === true) {
+        searchYelp('movers', movers);
+    }
+    if (searchStorage === true) {
+        searchYelp('storage', storage);
+    }
+    if (searchSupplies === true) {
+        searchYelp('packing supplies', supplies);
+    }
+    if (searchTrucks === true) {
+        searchYelp('truck rental', movers);
+    }
+}
 
 // Get results on a yelp search (search term, array to push results to)
 function searchYelp(search, arr) {
@@ -40,7 +55,7 @@ function listResults(arr) {
         var listItem = $("<div class='list-item'></div>");
         var name = $("<a target='_blank' href='" + arr[i].url + "'><h3>" + arr[i].name + "</h3></a>");
         setRating(arr[i]);
-        var rating = $("<img src='" + arr[i].stars + "'></a>");
+        var rating = $("<img src='" + arr[i].stars + "'>  <i style='color: #d32323;' class='fab fa-yelp'></i>");
         listItem.append(name, rating);
         $("#results").append(listItem);
     }
