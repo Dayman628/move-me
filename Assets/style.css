@@ -7,6 +7,14 @@
     padding: 1.5rem 6rem;
     color: orange;
 }
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden; 
+  text-align: center;
+}
 
 .hidden {
     display: none;
@@ -25,14 +33,7 @@
     width: 70%;
   }
 
-  footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    overflow: hidden; 
-    text-align: center;
-}
+
 
 .front-page {
     text-align: center;
