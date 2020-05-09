@@ -18,7 +18,7 @@ $.ajax({
 
   var weatherSpotDiv = $("#weatherSpot");
   weatherSpotDiv.css('text-align','center');
-    weatherSpotDiv.css('background-color','DeepSkyBlue');
+    weatherSpotDiv.css('background-color','white');
     weatherSpotDiv.css('display', 'inline-flex');
 
 
