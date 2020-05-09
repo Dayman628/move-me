@@ -33,10 +33,13 @@ function revealMain() {
 
 // When skip button is clicked
 $("#skip").on("click", function () {
-    revealMain();
+    if (mainScreen === false) {
+        revealMain();
+    }
 });
 
 // Get current location
-$("#currentAddress").on("click", function () {
-    getLocation();
-})
+$("#currentAddress").on("click", function() {
+    if (mainScreen === false) {
+        getLocation();
+    }
