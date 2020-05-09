@@ -2,17 +2,16 @@
 // get APIs working
 // add improvements and functionalities once basic MVP works
 
-
 // Test current location
-var currentLocation = {
+currentLocation = {
     lat: 33.448376,
     lng: -112.074036
 };
 
 // Live current location
 // var currentLocation = {
-//     lat: "",
-//     lng: ""
+//     lat: '',
+//     lng: ''
 // };
 
 var mainScreen = false;
@@ -29,7 +28,8 @@ function revealMain() {
     $("#bg").attr("class", "hidden");
     $(".navbar").addClass("showNav");
     mainScreen = true;
-}
+};
+
 
 // When skip button is clicked
 $("#skip").on("click", function () {
@@ -43,4 +43,3 @@ $("#currentAddress").on("click", function() {
     if (mainScreen === false) {
         getLocation();
     }
-})

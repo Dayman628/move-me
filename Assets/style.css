@@ -3,13 +3,14 @@
   }
 
 .footer {
-    background-color: #443232;
+    background-color: white;
     padding: 1.5rem 6rem;
-    color: orange;
+    color: rgb(140, 212, 212);
 }
+
 footer {
   position: absolute;
-  left: 0;
+  margin-left: 0;
   margin-bottom: 0;
   width: 100%;
   overflow: hidden; 
@@ -19,20 +20,6 @@ footer {
 .hidden {
     display: none;
 }
-
-.button {
-    background-color: white;
-    color: rgb(37, 24, 24);
-}
-  
-.left-half {
-    width: 30%;
-    text-align: center;
-  }
-  
-.right-half {
-    width: 70%;
-  }
 
 .front-page {
     text-align: center;
@@ -57,6 +44,7 @@ footer {
     width: 200%; 
     height: 200%;
   }
+
   #bg img {
     position: absolute; 
     top: 0; 
@@ -77,15 +65,6 @@ input.checkbox {
   height: 17px;
 }
 
-.input {
-  width: 250px;
-}
-
-
-img {
-  opacity: 0.9;
-}
-
 .motto {
   font-family: 'Raleway', sans-serif;
   color:rgb(108, 187, 187);
@@ -98,4 +77,5 @@ img {
 
 .showNav {
   background-color: rgb(140, 212, 212);
+  padding: 10px;
 }
