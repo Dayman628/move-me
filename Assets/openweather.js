@@ -14,6 +14,8 @@ $.ajax({
 }).then(function(response) {
 
 $("#weatherSpot").css('text-align','center');
+$("#weatherSpot").css('background-color','DeepSkyBlue');
+
 
   var timeValue = $("<p>");
   $("#weatherSpot").append(timeValue);
@@ -52,12 +54,12 @@ iconEl.height(30);
    console.log(response.daily.length)
 
    // to fahrenheit
- var tempFMax = parseInt(response.daily[0].temp.max - 273.15) * 1.80 + 32;
- var tempFMin = parseInt(response.daily[0].temp.min - 273.15) * 1.80 + 32;
+ var tempFMax = (parseInt(response.daily[0].temp.max - 273.15) * 1.80 + 32).toFixed(0);
+ var tempFMin = (parseInt(response.daily[0].temp.min - 273.15) * 1.80 + 32).toFixed(0);
 
  // add temp content to html
  //$(".temp").text("Temparature: " + tempF.toFixed(2) + " °F");
-  $(".dayOne").text("Hi: " + tempFMax + "°F   " + "  Lo: " + tempFMin + "°F");
+  $(".dayOne").text("H: " + tempFMax + "°F   " + "  L: " + tempFMin + "°F");
  //}
 
   
