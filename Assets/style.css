@@ -34,7 +34,6 @@ footer {
     width: 70%;
   }
 
-
 .front-page {
     text-align: center;
     position: fixed;
@@ -74,9 +73,16 @@ footer {
   }
   
 input.checkbox {
-  width: 15px;
-  height: 15px;
+  width: 17px;
+  height: 17px;
 }
+
+.input {
+  display: block;
+  margin : 0 auto;
+  width: 250px;
+}
+
 
 img {
   opacity: 0.9;
