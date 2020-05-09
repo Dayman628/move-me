@@ -27,6 +27,7 @@ footer {
   
 .left-half {
     width: 30%;
+    text-align: center;
   }
   
 .right-half {
@@ -69,7 +70,7 @@ footer {
   }
 
   li {
-    font-size: 18px;
+    font-size: 22px;
   }
   
 input.checkbox {
