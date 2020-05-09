@@ -45,7 +45,7 @@ footer {
 
 .title {
   font-family: 'Amatic SC', cursive;
-  color: white;
+  color:rgb(122, 202, 202);
   margin-top: 0px;
   font-size: 120px;
 }
@@ -78,8 +78,6 @@ input.checkbox {
 }
 
 .input {
-  display: block;
-  margin : 0 auto;
   width: 250px;
 }
 
@@ -90,6 +88,7 @@ img {
 
 .motto {
   font-family: 'Raleway', sans-serif;
+  color:rgb(108, 187, 187);
 }
 
 #results {
@@ -97,3 +96,6 @@ img {
   overflow: auto;
 }
 
+.showNav {
+  background-color: rgb(140, 212, 212);
+}

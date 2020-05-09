@@ -29,6 +29,8 @@ function locationChanged() {
 function revealMain() {
     $(".front-page").attr("class", "hidden");
     $(".main-page").removeClass("hidden");
+    $("#bg").attr("class", "hidden");
+    $(".navbar").addClass("showNav");
     mainScreen = true;
 }
 
