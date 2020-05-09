@@ -1,3 +1,23 @@
+var apiKey = "AIzaSyDetpwAhpDkX4o4m6ZJRGqMedOgP-_PvXw";
+
+var longitude = currentLocation.lng;
+var latitude = currentLocation.lat;
+var radi = "4000"; // MAX 3 mile search radius (5000m)
+
+// API for places search
+// https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=33.448376,-112.074036&radius=4000&type=storage&key=AIzaSyDetpwAhpDkX4o4m6ZJRGqMedOgP-_PvXw
+var queryURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + latitude + "," + longitude + "&radius=" + radi + "&type=storage&key=" + apiKey;
+
+// https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=33.448376,-112.074036&radius=4000&type=storage&key=AIzaSyDetpwAhpDkX4o4m6ZJRGqMedOgP-_PvXw
+
+
+$.ajax({
+    url: queryURL,
+    method: "GET"
+}).then(function (response) {
+    console.log(queryURL)
+});
+
 // Using Google Maps API to autocomplete the search bar
 // function initSearch() {
 //     var input = document.getElementById('search-bar');
