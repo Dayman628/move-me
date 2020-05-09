@@ -13,8 +13,8 @@
 </head>
 
 <body>
-  <div id="bg" class="">
-    <img src="./Assets/red-orange.jpg">
+  <div id="bg">
+    <img src="./Assets/clouds.png">
   </div>
 
   <!-- This is the front page, which will show on default -->
@@ -37,7 +37,7 @@
       Skip
     </a>
     <a class="button is-primary" id="currentAddress">
-      Get current address
+      Get Current Address
     </a>
     <br>
     <br>
@@ -45,7 +45,6 @@
     <br>
     <p class="motto">Moving made easier.</p>
   </section>
-
 
 
   <!-- This is the second page, that becomes visible when user submits address -->
@@ -56,84 +55,63 @@
         <div id="weatherSpot" class="nav-item nav-right">
       </nav>
     </header>
+
     <br>
     <br>
-    <div class="container level">
-      <div class="column buttons left-half">
-        <div class="field has-addons">
-          <div class="control">
-            <input class="input" id="searchInput" type="text" placeholder="Where are you moving from?">
-          </div>
-          <div class="control">
-            <a class="button is-primary"><i class="fa fa-search"></i></a>
+
+    <div class="level">
+      <div class = "row">
+        <div class="column buttons">
+          <input class = "input" type="text" placeholder="Where are you moving from?">
+          <a class="button is-primary"><i class="fa fa-search"></i></a>
+          <br>
+          <input class = "input" type="text" placeholder="Where are you moving to?">
+          <a class="button is-primary"><i class="fa fa-search"></i></a>
+          <br>
+          <br>
+          
+          <!-- these are the places where user can filter by checking which they want to see -->
+          <ul>
+            <li>
+              <label class="checkbox">
+                <input type="checkbox" class="checkbox" checked>
+                <i class="fas fa-people-carry"></i> Movers
+              </label>
+            </li>
+            <li>
+              <label class="checkbox">
+                <input type="checkbox" class="checkbox" checked>
+                <i class="fas fa-warehouse"></i> Storage
+              </label>
+            </li>
+            <li>
+              <label class="checkbox">
+                <input type="checkbox" class="checkbox" checked>
+                <i class="fas fa-box-open"></i> Supplies
+              </label>
+            </li>
+            <li>
+              <label class="checkbox">
+                <input type="checkbox" class="checkbox" checked>
+                <i class="fas fa-truck"></i> Rent a Truck
+              </label>
+            </li>
+          </ul>
+          <br>
+         
+
+          <div id="results" class="list is-hoverable">
+            Search Results will go below
           </div>
         </div>
-
-        <div class="field has-addons">
-          <div class="control">
-            <input class="input" id="searchInput" type="text" placeholder="Where are you moving to?">
-          </div>
-          <div class="control">
-            <a class="button is-primary"><i class="fa fa-search"></i></a>
-          </div>
-        </div>
-
-          <!-- <div id="currentHome" class="search">
-            <input type="text" class="input" placeholder="Where are you moving from?">
-            <button type="submit" class="searchButton">
-              <i class="fa fa-search"></i>
-            </button>
-          </div>
-        </div>
-
-        <div id="nextHome" class="search control">
-          <input type="text" class="input" placeholder="Where are you moving to?">
-          <button type="submit" class="searchButton">
-            <i class="fa fa-search"></i>
-          </button>
-        </div> -->
-        <br>
-        <br>
-        <ul>
-          <!-- work with SASS to create larger font, padding, etc. -->
-          <li>
-            <label class="checkbox">
-              <input type="checkbox" class="checkbox">
-              <i class="fas fa-people-carry"></i> Movers
-            </label>
-          </li>
-          <li>
-            <label class="checkbox">
-              <input type="checkbox" class="checkbox">
-              <i class="fas fa-warehouse"></i> Storage
-            </label>
-          </li>
-          <li>
-            <label class="checkbox">
-              <input type="checkbox" class="checkbox">
-              <i class="fas fa-box-open"></i> Supplies
-            </label>
-          </li>
-          <li>
-            <label class="checkbox">
-              <input type="checkbox" class="checkbox">
-              <i class="fas fa-truck"></i> Rent a Truck
-            </label>
-          </li>
-        </ul>
-        <br>
-        <br>
-
-        <div id="results" class="list is-hoverable">
-          Search Results will go below
-        </div>
-
       </div>
+
       <!-- this is for the map -->
       <div id="map" class="column" style="height: 80vh;">
         the map will go here
       </div>
     </div>
+
   </section>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

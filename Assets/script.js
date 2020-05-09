@@ -18,16 +18,15 @@ var mainScreen = false;
 
 // function for when the current location changes
 function locationChanged() {
-    searchYelp('movers', movers);
-    searchYelp('storage', storage);
-    searchYelp('packing supplies', supplies);
-    searchYelp('truck rental', movers);
+    completeSearches();
 }
 
 // reveal the main page
 function revealMain() {
     $(".front-page").attr("class", "hidden");
     $(".main-page").removeClass("hidden");
+    $("#bg").attr("class", "hidden");
+    $(".navbar").addClass("showNav");
     mainScreen = true;
 };
 
