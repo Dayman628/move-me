@@ -12,24 +12,53 @@ $.ajax({
   url: queryURL,
   method: "GET" 
 }).then(function(response) {
+
+$("#weatherSpot").css('text-align','center');
+
+  var timeValue = $("<p>");
+  $("#weatherSpot").append(timeValue);
+  timeValue.css("font-size", "10px");
+ // timeValue.css('text-align','center')
+   // JSON timestamp
+   var timeStamp = response.daily[0].dt;
+  console.log(timeStamp)
+   
   
+   // Convert timestamp to milliseconds
+   var date = new Date(timeStamp*1000);
+ 
+   var days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+   var dayOfWeek = days[date.getDay()]
+  console.log(dayOfWeek)
+  timeValue.text(dayOfWeek)
+
+
+var iconEl = $("<img>");
+$("#weatherSpot").append(iconEl);
+var iconId = response.daily[0].weather[0].icon;
+var iconLink = "http://openweathermap.org/img/wn/" + iconId + "@2x.png";
+iconEl.attr("src",iconLink);
+iconEl.width(30); 
+iconEl.height(30);
+
+
+ var dayOneDiv = $("<div>");
+ $("#weatherSpot").append(dayOneDiv);
+ dayOneDiv.addClass("dayOne");
+ dayOneDiv.css("font-size", "10px");
+// dayOneDiv.css('text-align','center')
  console.log(response);
- //$(".weatherSpot").html(response.name);
- //var iconId = response.weather[0].icon;
+// for (var i = 0; i < response.daily.length; i++) {
+   console.log(response.daily.length)
 
-//  var iconLink = "http://openweathermap.org/img/wn/" + iconID + "@2x.png";
-//  $(".weatherIcon").attr("src",iconLink);
-//  $('.weatherIcon').width(50); 
-//  $('.weatherIcon').height(50);
+   // to fahrenheit
+ var tempFMax = parseInt(response.daily[0].temp.max - 273.15) * 1.80 + 32;
+ var tempFMin = parseInt(response.daily[0].temp.min - 273.15) * 1.80 + 32;
 
- 
-//  $(".wind").text("Wind: " + response.wind.speed + " MPH");
-//  $(".humidity").text("Humidity: " + response.main.humidity + "%");
-//  $(".uvindex").text("UV Index: ")
- 
-//  // to fahrenheit
-//  var tempF = (response.main.temp - 273.15) * 1.80 + 32;
+ // add temp content to html
+ //$(".temp").text("Temparature: " + tempF.toFixed(2) + " °F");
+  $(".dayOne").text("Hi: " + tempFMax + "°F   " + "  Lo: " + tempFMin + "°F");
+ //}
 
-//  // add temp content to html
-//  $(".temp").text("Temparature: " + tempF.toFixed(2) + " °F");
+  
 });
