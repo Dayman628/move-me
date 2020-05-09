@@ -2,19 +2,27 @@
     box-sizing: border-box;
   }
 
-.footer {
-    background-color: white;
-    padding: 1.5rem 6rem;
-    color: rgb(140, 212, 212);
+
+.main-page {
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 footer {
-  position: absolute;
-  margin-left: 0;
-  margin-bottom: 0;
+  background-color: white;
+  padding: 1.5rem 6rem;
+  color: rgb(140, 212, 212);
+  position: fixed;
+  margin-top: -2%;
+  height: 50;
   width: 100%;
-  overflow: hidden; 
   text-align: center;
+  bottom: 0;
 }
 
 .hidden {
@@ -78,4 +86,12 @@ input.checkbox {
 .showNav {
   background-color: rgb(140, 212, 212);
   padding: 10px;
+}
+
+.level {
+  text-align: center;
+}
+
+.input {
+  width: 240px;
 }
