@@ -1,25 +1,41 @@
-var searchMovers = true;
-var searchStorage = true;
-var searchSupplies = true;
-var searchTrucks = true;
+var search = {
+    movers: true,
+    storage: true,
+    supplies: true,
+    trucks: true
+};
 
-var movers = [];
-var storage = [];
-var supplies = [];
-var trucks = [];
+var results = {
+    movers: [],
+    storage: [],
+    supplies: [],
+    trucks: [],
+};
 
 function completeSearches() {
-    if (searchMovers === true) {
-        searchYelp('movers', movers);
+    results = {
+        movers: [],
+        storage: [],
+        supplies: [],
+        trucks: [],
+    };
+    if (search.movers === true) {
+        searchYelp('movers', results.movers);
     }
-    if (searchStorage === true) {
-        searchYelp('storage', storage);
+    if (search.storage === true) {
+        searchYelp('storage unit', results.storage);
     }
-    if (searchSupplies === true) {
-        searchYelp('packing supplies', supplies);
+    if (search.supplies === true) {
+        searchYelp('packing supplies', results.supplies);
     }
-    if (searchTrucks === true) {
-        searchYelp('truck rental', movers);
+    if (search.trucks === true) {
+        searchYelp('truck rental', results.movers);
+    }
+    if (search.movers === false
+        && search.storage === false
+        && search.supplies === false
+        && search.trucks === false) {
+        $("#results").html("");
     }
 }
 
@@ -34,7 +50,6 @@ function searchYelp(search, arr) {
         method: "GET",
         dataType: "json"
     }).then(function (response) {
-        console.log(response);
         // Reformats and stores business results to make them easy to access
         for (var i = 0; i < response.businesses.length; i++) {
             var object = {};
@@ -49,8 +64,9 @@ function searchYelp(search, arr) {
     })
 }
 
+// list the yelp results
 function listResults(arr) {
-    console.log(arr);
+    $("#results").html("");
     for (var i = 0; i < arr.length; i++) {
         var listItem = $("<div class='list-item'></div>");
         var name = $("<a target='_blank' href='" + arr[i].url + "'><h3>" + arr[i].name + "</h3></a>");
@@ -59,8 +75,10 @@ function listResults(arr) {
         listItem.append(name, rating);
         $("#results").append(listItem);
     }
+    console.log(results);
 }
 
+// set the rating image for each result
 function setRating(business) {
     if (business.rating === 0) {
         business.stars = "./assets/yelp-stars/regular_0.png"
@@ -94,3 +112,15 @@ function setRating(business) {
     }
 }
 
+// when a checkbox is pressed
+$(".filter").on("change", function (event) {
+    var filter = $(this).attr("data-filter")
+    if (search[filter] === true) {
+        search[filter] = false;
+        results[filter] = [];
+    } else {
+        search[filter] = true;
+    }
+    completeSearches();
+    console.log(results);
+})
