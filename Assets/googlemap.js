@@ -31,6 +31,10 @@ function getLocation() {
         navigator.geolocation.getCurrentPosition(function (position) {
             currentLocation.lng = position.coords.longitude;
             currentLocation.lat = position.coords.latitude;
+            if (mainScreen === false) {
+                revealMain();
+            }
+            locationChanged();
         });
     }
 }
