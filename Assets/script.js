@@ -43,3 +43,4 @@ $("#currentAddress").on("click", function() {
     if (mainScreen === false) {
         getLocation();
     }
+});
