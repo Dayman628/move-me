@@ -7,6 +7,14 @@
     padding: 1.5rem 6rem;
     color: orange;
 }
+footer {
+  position: absolute;
+  left: 0;
+  margin-bottom: 0;
+  width: 100%;
+  overflow: hidden; 
+  text-align: center;
+}
 
 .hidden {
     display: none;
@@ -19,20 +27,12 @@
   
 .left-half {
     width: 30%;
+    text-align: center;
   }
   
 .right-half {
     width: 70%;
   }
-
-  footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    overflow: hidden; 
-    text-align: center;
-}
 
 .front-page {
     text-align: center;
@@ -69,13 +69,20 @@
   }
 
   li {
-    font-size: 25px;
+    font-size: 22px;
   }
   
 input.checkbox {
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  height: 17px;
 }
+
+.input {
+  display: block;
+  margin : 0 auto;
+  width: 250px;
+}
+
 
 img {
   opacity: 0.9;
@@ -84,3 +91,9 @@ img {
 .motto {
   font-family: 'Raleway', sans-serif;
 }
+
+#results {
+  max-height: 200px;
+  overflow: auto;
+}
+
