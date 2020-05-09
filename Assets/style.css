@@ -10,7 +10,7 @@
 footer {
   position: absolute;
   left: 0;
-  bottom: 0;
+  margin-bottom: 0;
   width: 100%;
   overflow: hidden; 
   text-align: center;
@@ -32,7 +32,6 @@ footer {
 .right-half {
     width: 70%;
   }
-
 
 
 .front-page {
@@ -70,12 +69,12 @@ footer {
   }
 
   li {
-    font-size: 25px;
+    font-size: 18px;
   }
   
 input.checkbox {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
 }
 
 img {

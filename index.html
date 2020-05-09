@@ -49,17 +49,15 @@
 
 
   <!-- This is the second page, that becomes visible when user submits address -->
-
   <section class="section main-page hidden">
-    <nav class="navbar is-fixed-top">
-      <div class="navbar">
-        <!-- this is where the weather will go -->
-        <div id="weatherSpot" class="nav-item nav-right"></div>
-    </nav>
+    <header>
+      <nav class="navbar is-fixed-top">
+          <!-- this is where the weather will go -->
+          <div id="weatherSpot" class="nav-item nav-right">
+      </nav>
+    </header>
 
     <div class="container level">
-
-      <!-- this is where our ui will go -->
       <div class="column buttons left-half">
         <!-- search inputs -->
         <div id="currentHome" class="search">
@@ -118,19 +116,6 @@
     </div>
   </section>
 
-  <!-- this is the footer -->
-  <footer class="footer">
-    <div class="content has-text-centered"></div>
-    <p>
-      <!-- twitter link? -->
-      <strong style="color:coral">Move Me</strong> by <a href="https://twitter.com/rudebroodpdx?lang=en"
-        target="_blank">Rude Crude
-        Brood</a>. The source code is licensed
-      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>
-    </p>
-    </div>
-  </footer>
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="./assets/script.js"></script>
   <script src="./assets/googlemap.js"></script>
@@ -141,4 +126,15 @@
     async defer></script>
 </body>
 
+  <!-- this is the footer -->
+  <footer class="footer">
+    <p>
+      <!-- twitter link? -->
+      <strong style="color:coral">Move Me</strong> by <a href="https://twitter.com/rudebroodpdx?lang=en"
+        target="_blank">Rude Crude
+        Brood</a>. The source code is licensed
+      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>
+    </p>
+  </footer>
+  
 </html>
