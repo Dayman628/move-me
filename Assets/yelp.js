@@ -1,3 +1,8 @@
+var searchMovers = true;
+var searchStorage = true;
+var searchStorage = true;
+var searchTrucks = true;
+
 var movers = [];
 var storage = [];
 var supplies = [];
@@ -32,8 +37,45 @@ function searchYelp(search, arr) {
 function listResults(arr) {
     console.log(arr);
     for (var i = 0; i < arr.length; i++) {
-        listItem = $("<a class='list-item'>" + arr[i].name + "</a>");
+        var listItem = $("<div class='list-item'></div>");
+        var name = $("<a target='_blank' href='" + arr[i].url + "'><h3>" + arr[i].name + "</h3></a>");
+        setRating(arr[i]);
+        var rating = $("<img src='" + arr[i].stars + "'></a>");
+        listItem.append(name, rating);
         $("#results").append(listItem);
+    }
+}
+
+function setRating(business) {
+    if (business.rating === 0) {
+        business.stars = "./assets/yelp-stars/regular_0.png"
+    }
+    else if (business.rating === 1) {
+        business.stars = "./assets/yelp-stars/regular_1.png"
+    }
+    else if (business.rating === 1.5) {
+        business.stars = "./assets/yelp-stars/regular_1_half.png"
+    }
+    else if (business.rating === 2) {
+        business.stars = "./assets/yelp-stars/regular_2.png"
+    }
+    else if (business.rating === 2.5) {
+        business.stars = "./assets/yelp-stars/regular_2_half.png"
+    }
+    else if (business.rating === 3) {
+        business.stars = "./assets/yelp-stars/regular_3.png"
+    }
+    else if (business.rating === 3.5) {
+        business.stars = "./assets/yelp-stars/regular_3_half.png"
+    }
+    else if (business.rating === 4) {
+        business.stars = "./assets/yelp-stars/regular_4.png"
+    }
+    else if (business.rating === 4.5) {
+        business.stars = "./assets/yelp-stars/regular_4_half.png"
+    }
+    else if (business.rating === 5) {
+        business.stars = "./assets/yelp-stars/regular_5.png"
     }
 }
 

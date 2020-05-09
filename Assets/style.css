@@ -84,3 +84,8 @@ img {
 .motto {
   font-family: 'Raleway', sans-serif;
 }
+
+#results {
+  max-height: 200px;
+  overflow: auto;
+}
