@@ -15,7 +15,26 @@ var currentLocation = {
 //     lng: ""
 // };
 
-$("#skip").on("click", function () {
+var mainScreen = false;
+
+// function for when the current location changes
+function locationChanged() {
+    searchYelp('movers', movers);
+}
+
+// reveal the main page
+function revealMain() {
     $(".front-page").attr("class", "hidden");
     $(".main-page").removeClass("hidden");
+    mainScreen = true;
+}
+
+// When skip button is clicked
+$("#skip").on("click", function () {
+    revealMain();
 });
+
+// Get current location
+$("#currentAddress").on("click", function() {
+    getLocation();
+})

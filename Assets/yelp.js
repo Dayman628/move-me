@@ -37,5 +37,3 @@ function listResults(arr) {
     }
 }
 
-searchYelp('movers', movers);
-
