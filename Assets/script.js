@@ -35,6 +35,7 @@ function revealMain() {
 $("#skip").on("click", function () {
     if (mainScreen === false) {
         revealMain();
+        loadIcons();
     }
 });
 
@@ -44,4 +45,6 @@ $("#currentAddress").on("click", function () {
         getLocation();
     }
 });
+
+
 
