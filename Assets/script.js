@@ -39,8 +39,9 @@ $("#skip").on("click", function () {
 });
 
 // Get current location
-$("#currentAddress").on("click", function() {
+$("#currentAddress").on("click", function () {
     if (mainScreen === false) {
         getLocation();
     }
 });
+

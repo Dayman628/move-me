@@ -76,6 +76,7 @@ function listResults(arr) {
         $("#results").append(listItem);
     }
     console.log(results);
+
 }
 
 // set the rating image for each result
