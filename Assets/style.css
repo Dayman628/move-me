@@ -25,6 +25,7 @@ footer {
   bottom: 0;
 }
 
+
 .hidden {
     display: none;
 }
@@ -94,4 +95,21 @@ input.checkbox {
 
 .input {
   width: 240px;
+}
+
+@keyframes myanimation
+{
+    0% {
+        left: 0;
+    }
+    10% {
+        left: 50%;
+    }
+    100% {
+        left: 10%;
+    }
+}
+
+#moving-truck {
+  animation: myanimation 5s;
 }
