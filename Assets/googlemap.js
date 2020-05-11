@@ -23,39 +23,100 @@ function getLocation() {
 var map;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
         center: currentLocation,
-        zoom: 12
+        mapTypeId: 'roadmap'
     });
 
-    // // Marker icon base
-    // var iconBase = 'https://github.com/Dayman628/move-me/tree/master/Assets';
-    // var icons = {
-    //     location: {
-    //         name: 'Current Location',
-    //         icon: inconBase + 'house.PNG'
-    //     },
-    //     movers: {
-    //         name: 'Movers',
-    //         icon: iconBase + 'people-carry.PNG'
-    //     },
-    //     storage: {
-    //         name: 'Storage',
-    //         icon: iconBase + 'warehouse.PNG'
-    //     },
-    //     supplies: {
-    //         name: 'Moving Supplies',
-    //         icon: iconBase + 'box-open.PNG'
-    //     },
-    //     rental: {
-    //         name: 'Moving Truck Rental',
-    //         icon: iconBase + 'truck.PNG'
-    //     }
+};
+
+function loadIcons() {
+
+    // Icon block
+    var iconBase = 'https://raw.githubusercontent.com/Dayman628/move-me/master/Assets/';
+    var icons = {
+        location: {
+            icon: iconBase + 'house.PNG'
+        },
+        movers: {
+            icon: iconBase + 'people-carry.PNG'
+        },
+        storage: {
+            icon: iconBase + 'warehouse.PNG'
+        },
+        supplies: {
+            icon: iconBase + 'box-open.PNG'
+        },
+        trucks: {
+            icon: iconBase + 'truck.PNG'
+        },
+    };
+
+    // var features = {
+    //     position: '',
+    //     type: '',
     // };
+
+    for (let i = 0; i < 2; i++) {
+
+        var movers = {
+            lat: results.movers[i].coords.latitude,
+            lng: results.movers[i].coords.longitude,
+        };
+        // features.position = movers;
+        // features.type = 'movers';
+        // var lat = results.movers[i].coords.latitude;
+        // var lng = results.movers[i].coords.longitude;
+        // console.log(movers.lat);
+        // console.log(movers.lng);
+    };
+
+    var features = [
+        {
+            position: currentLocation,
+            type: 'location'
+        },
+        {
+            position: movers,
+            type: 'movers'
+        },
+    ];
+
+    features.forEach(function (becomes) {
+        var marker = new google.maps.Marker({
+            position: becomes.position,
+            icon: icons[becomes.type].icon,
+            map: map
+        });
+    });
+
+    // for (let i = 0; i < 2; i++) {
+    //     var features = {
+    //         position: currentLocation,
+    //         type: 'location',
+    //     var 
+    //         position: movers,
+    //         type: 'movers'
+    //     },
+
+    // }
+
+    // features.forEach(function (feature) {
+    //     var marker = new google.maps.Marker({
+    //         position: feature.position,
+    //         icon: icons[feature.type].icon,
+    //         map: map
+    //     });
+    // });
 
     // var features = [
     //     {
-    //         position: new google.maps.LatLng(33.448376, -112.074036),
-    //         type: 'currentLocation'
+    //         position: currentLocation,
+    //         type: 'location'
+    //     },
+    //     {
+    //         position: movers,
+    //         type: 'movers'
     //     },
     // ];
 
@@ -66,9 +127,137 @@ function initMap() {
     //         map: map
     //     });
     // });
-}
+
+    console.log("passed thru")
+};
 
 
+
+    // function loadIcons() {
+    //     var iconBase = 'https://raw.githubusercontent.com/Dayman628/move-me/master/Assets/';
+    //     var icons = {
+    //         location: {
+    //             name: 'Current Location',
+    //             icon: iconBase + 'house.PNG'
+    //         },
+
+    //         movers: {
+    //             name: 'Movers',
+    //             icon: iconBase + 'people-carry.PNG'
+    //         },
+
+    //         storage: {
+    //             name: 'Storage',
+    //             icon: iconBase + 'warehouse.PNG'
+    //         },
+
+    //         supplies: {
+    //             name: 'Moving Supplies',
+    //             icon: iconBase + 'box-open.PNG'
+    //         },
+
+    //         trucks: {
+    //             name: 'Moving Truck Rental',
+    //             icon: iconBase + 'truck.PNG'
+    //         },
+    //     };
+
+    //     var movers = {
+    //         lat: results.movers.coords[0].latitude,
+    //         lng: results.movers.coords.longtitude
+    //     };
+
+    //     var storage = {
+    //         lat: results.storage.coords[0].latitude,
+    //         lng: results.storage.coords.longtitude
+    //     };
+
+    //     var supplies = {
+    //         lat: results.storage.coords[0].latitude,
+    //         lng: results.storage.coords.longtitude
+    //     };
+
+    //     // var trucks = {
+    //     //     lat: results.trucks.coords.latitude,
+    //     //     lng: results.trucks.coords.longtitude
+    //     // };
+
+    //     // for (let i = 0; i < 5; i++) {
+    //     //     var nearMover = {
+    //     //     };
+    //     // };
+
+    //     //create for_loop for the maps
+    //     var features = [
+    //         {
+    //             position: currentLocation,
+    //             type: 'location'
+    //         },
+
+    //         {
+    //             position: movers,
+    //             type: 'movers'
+    //         },
+
+    //         {
+    //             position: storage,
+    //             type: 'storage'
+    //         },
+
+    //         {
+    //             position: supplies,
+    //             type: 'supplies'
+    //         },
+    //         // {
+    //         //     position: trucks,
+    //         //     type: 'trucks'
+    //         // },
+
+    //     ];
+
+    //     // Markers for the map
+    //     features.forEach(function (feature) {
+    //         var marker = new google.maps.Marker({
+    //             position: feature.position,
+    //             icon: icons[feature.type].icon,
+    //             map: map
+    //         });
+    //     });
+    // };
+    // loadIcons()
+
+// };
 
 // Add code for when user selects "use my current location"
 // getLocation();
+
+ //     // Test results
+        //     // var results = {
+        //     //     movers: {
+        //     //         coords: {
+        //     //             latitude: 33.4519882202148,
+        //     //             longtitude: -112.12621307373
+        //     //         },
+        //     //     },
+
+        //     //     storage: {
+        //     //         coords: {
+        //     //             latitude: 33.4233613627891,
+        //     //             longtitude: -112.236363741523
+        //     //         },
+        //     //     },
+
+        //     //     supplies: {
+        //     //         coords: {
+        //     //             latitude: 33.4499672,
+        //     //             longitude: -112.0702225
+        //     //         },
+        //     //     },
+        //     //     Rental truck example
+        //     //     trucks: {
+        //     //         coords: {
+        //     //             latitude: 33.460163,
+        //     //             longitude: -112.219559
+        //     //         },
+        //     //     },
+        //     // };

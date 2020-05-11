@@ -35,12 +35,16 @@ function revealMain() {
 $("#skip").on("click", function () {
     if (mainScreen === false) {
         revealMain();
+        loadIcons();
     }
 });
 
 // Get current location
-$("#currentAddress").on("click", function() {
+$("#currentAddress").on("click", function () {
     if (mainScreen === false) {
         getLocation();
     }
 });
+
+
+
