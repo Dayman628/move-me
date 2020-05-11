@@ -63,7 +63,7 @@ function loadIcons() {
     };
 
     // Convert the long/lat data for use with map pins
-    for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < 3; i++) {
         // var info = results.movers[i].name;
 
         var movers = {
@@ -85,6 +85,7 @@ function loadIcons() {
 
         // Pins for map
         var pins = [
+
             {
                 pinPosition: currentLocation,
                 pinType: 'location',
@@ -123,11 +124,12 @@ function loadIcons() {
                 icon: icons[becomes.pinType].icon,
                 map: map
             });
-            // markers.push(marker)
+            markers.push(marker)
+            infowindow.open(map, marker);
 
-            marker.addListener('click', function () {
-                infowindow.open(map, marker);
-            });
+            // marker.addListener('click', function () {
+            //     clearMarkers();
+            // });
         });
 
     };
