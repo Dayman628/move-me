@@ -75,7 +75,7 @@ function listResults(arr) {
         listItem.append(name, rating);
         $("#results").append(listItem);
     }
-    console.log(results);
+    // console.log(results);
     loadIcons();
 }
 
@@ -124,4 +124,5 @@ $(".filter").on("change", function (event) {
     }
     completeSearches();
     console.log(results);
+    // deleteMarkers();
 })
