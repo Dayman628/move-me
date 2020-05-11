@@ -38,6 +38,7 @@ $("#currentAddress").on("click", function () {
     }
 });
 
+// Temp button for loading icons
 $("#loadicon").on("click", function () {
     loadIcons();
 });

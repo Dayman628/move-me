@@ -30,7 +30,7 @@ var markers = []
 var map;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 10,
+        zoom: 12,
         center: currentLocation,
         mapTypeId: 'roadmap'
     });
@@ -38,6 +38,9 @@ function initMap() {
 
 // Load icons function to be called when Yelp list is loaded
 function loadIcons() {
+
+    // Reloads map
+    initMap();
 
     // Icon block
     var iconBase = 'https://raw.githubusercontent.com/Dayman628/move-me/master/Assets/';
@@ -61,6 +64,7 @@ function loadIcons() {
 
     // Convert the long/lat data for use with map pins
     for (let i = 0; i < 1; i++) {
+        // var info = results.movers[i].name;
 
         var movers = {
             lat: results.movers[i].coords.latitude,
@@ -82,36 +86,50 @@ function loadIcons() {
         // Pins for map
         var pins = [
             {
-                position: currentLocation,
-                type: 'location'
+                pinPosition: currentLocation,
+                pinType: 'location',
+                pinName: 'Home'
             },
             {
-                position: movers,
-                type: 'movers'
+                pinPosition: movers,
+                pinType: 'movers',
+                pinName: results.movers[i].name
             },
             {
-                position: storage,
-                type: 'storage'
+                pinPosition: storage,
+                pinType: 'storage',
+                pinName: results.storage[i].name
             },
             {
-                position: supplies,
-                type: 'supplies'
+                pinPosition: supplies,
+                pinType: 'supplies',
+                pinName: results.supplies[i].name
             },
             // {
-            //     position: trucks,
-            //     type: 'trucks'
+            //     pinPosition: trucks,
+            //     pinType: 'trucks',
             // },
         ];
 
         // For each loop to pin each result
         pins.forEach(function (becomes) {
+
+            var infowindow = new google.maps.InfoWindow({
+                content: becomes.pinName
+            });
+
             var marker = new google.maps.Marker({
-                position: becomes.position,
-                icon: icons[becomes.type].icon,
+                position: becomes.pinPosition,
+                icon: icons[becomes.pinType].icon,
                 map: map
             });
-            markers.push(marker)
+            // markers.push(marker)
+
+            marker.addListener('click', function () {
+                infowindow.open(map, marker);
+            });
         });
+
     };
 
     // Pins loaded console log
