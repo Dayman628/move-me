@@ -45,6 +45,3 @@ $("#currentAddress").on("click", function () {
         getLocation();
     }
 });
-
-
-

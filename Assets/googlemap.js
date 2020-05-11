@@ -20,6 +20,7 @@ function getLocation() {
 }
 
 // Code that initializes the google map
+var markers = []
 var map;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -27,9 +28,9 @@ function initMap() {
         center: currentLocation,
         mapTypeId: 'roadmap'
     });
-
 };
 
+// Load icons function to be called when Yelp list is loaded
 function loadIcons() {
 
     // Icon block
@@ -52,25 +53,28 @@ function loadIcons() {
         },
     };
 
-    // var features = {
-    //     position: '',
-    //     type: '',
-    // };
-
-    for (let i = 0; i < 5; i++) {
+    // Convert the long/lat data for use with map pins
+    for (let i = 0; i < 1; i++) {
 
         var movers = {
             lat: results.movers[i].coords.latitude,
             lng: results.movers[i].coords.longitude,
         };
-        // features.position = movers;
-        // features.type = 'movers';
-        // var lat = results.movers[i].coords.latitude;
-        // var lng = results.movers[i].coords.longitude;
-        // console.log(movers.lat);
-        // console.log(movers.lng);
+        var storage = {
+            lat: results.storage[i].coords.latitude,
+            lng: results.storage[i].coords.longitude,
+        };
+        var supplies = {
+            lat: results.supplies[i].coords.latitude,
+            lng: results.supplies[i].coords.longitude,
+        };
+        // var trucks = {
+        //     lat: results.trucks[i].coords.latitude,
+        //     lng: results.trucks[i].coords.longitude,
+        // };
 
-        var features = [
+        // Pins for map
+        var pins = [
             {
                 position: currentLocation,
                 type: 'location'
@@ -79,17 +83,56 @@ function loadIcons() {
                 position: movers,
                 type: 'movers'
             },
+            {
+                position: storage,
+                type: 'storage'
+            },
+            {
+                position: supplies,
+                type: 'supplies'
+            },
+            // {
+            //     position: trucks,
+            //     type: 'trucks'
+            // },
         ];
-    
-        features.forEach(function (becomes) {
+
+        // For each loop to pin each result
+        pins.forEach(function (becomes) {
             var marker = new google.maps.Marker({
                 position: becomes.position,
                 icon: icons[becomes.type].icon,
                 map: map
             });
-            return marker
+            markers.push(marker)
         });
     };
 
-    console.log("passed thru")
+    // Pins loaded console log
+    console.log("markers pinned")
+    // console.log(markers)
+    // console.log(movers.lat);
+    // console.log(movers.lng);
 };
+
+// Clear out pin function for when boxes are unchecked
+// function clearMarkers() {
+//     loadIcons(null);
+// }
+// function deleteMarkers() {
+//     clearMarkers();
+//     markers = [];
+// }
+
+// For loop to pin result, unused at the moment
+// function setMarker() {
+//     // for (let i = 0; i < pins.length; i++) {
+//     var marker = new google.maps.Marker({
+//         position: pins.position,
+//         icon: icons[pins.type].icon,
+//         map: map
+//     });
+//     // };
+// };
+// setMarker();
+
