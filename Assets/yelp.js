@@ -124,4 +124,5 @@ $(".filter").on("change", function (event) {
     completeSearches();
     console.log(results);
     // deleteMarkers();
+    // loadIcons();
 })
