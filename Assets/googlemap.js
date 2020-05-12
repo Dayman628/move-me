@@ -71,17 +71,13 @@ function loadIcons() {
             lng: results.movers[i].coords.longitude,
         };
         var storage = {
-            lat: results.storage[i].coords.latitude,
+            lat: results.storage[i].coords.latitude,    
             lng: results.storage[i].coords.longitude,
         };
-        var supplies = {
-            lat: results.supplies[i].coords.latitude,
-            lng: results.supplies[i].coords.longitude,
+        var trucks = {
+            lat: results.trucks[i].coords.latitude,
+            lng: results.trucks[i].coords.longitude,
         };
-        // var trucks = {
-        //     lat: results.trucks[i].coords.latitude,
-        //     lng: results.trucks[i].coords.longitude,
-        // };
 
         // Pins for map
         var pins = [
@@ -102,14 +98,9 @@ function loadIcons() {
                 pinName: results.storage[i].name
             },
             {
-                pinPosition: supplies,
-                pinType: 'supplies',
-                pinName: results.supplies[i].name
+                pinPosition: trucks,
+                pinType: 'trucks',
             },
-            // {
-            //     pinPosition: trucks,
-            //     pinType: 'trucks',
-            // },
         ];
 
         // For each loop to pin each result

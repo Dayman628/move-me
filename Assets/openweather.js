@@ -5,7 +5,6 @@ var longitude = currentLocation.lng;
 var latitude = currentLocation.lat;
 
 var queryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + latitude + "&lon=" + longitude + "&exclude=hourly&appid=" + APIKey; 
-//var queryURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=" + APIKey;
   
 $.ajax({
   url: queryURL,
@@ -18,18 +17,17 @@ $.ajax({
 
   var weatherSpotDiv = $("#weatherSpot");
   weatherSpotDiv.css('text-align','center');
-    weatherSpotDiv.css('background-color','white');
-    weatherSpotDiv.css('display', 'inline-flex');
-
+  weatherSpotDiv.css('background-color','white');
+  weatherSpotDiv.css('display', 'inline-flex');
 
   for (var i = 0; i < 5; i++) {
-
-
     var eachDayDiv = $("<div>");
     eachDayDiv.addClass(dayArray[i]);
-    eachDayDiv.css('padding-right', '10px');
+    eachDayDiv.css('padding', '5px');
+    eachDayDiv.css('border', '5px solid rgb(140, 212, 212)'); 
+    eachDayDiv.css('border-radius','10%');
     weatherSpotDiv.append(eachDayDiv);
-
+    
     // Displaying day of the week
     var timeValue = $("<p>");
     eachDayDiv.append(timeValue);
@@ -43,6 +41,7 @@ $.ajax({
     var dayOfWeek = days[date.getDay()]
     timeValue.text(dayOfWeek)
     
+    // Displaying weather icon
     var iconEl = $("<img>");
     iconEl.addClass(iconArray[i]);
     eachDayDiv.append(iconEl);
@@ -52,17 +51,15 @@ $.ajax({
     $("." + iconArray[i]).width(30); 
     $("." + iconArray[i]).height(30);
 
+    // Displaying High and Low Temperature
     var dayOneDiv = $("<div>");
     eachDayDiv.append(dayOneDiv);
     dayOneDiv.addClass(tempArray[i]);
     dayOneDiv.css("font-size", "10px");
-    // for (var i = 0; i < response.daily.length; i++) {
   
-     // to fahrenheit
+    // to fahrenheit
     var tempFMax = (parseInt(response.daily[i].temp.max - 273.15) * 1.80 + 32).toFixed(0);
     var tempFMin = (parseInt(response.daily[i].temp.min - 273.15) * 1.80 + 32).toFixed(0);
-  
-    
     dayOneDiv.text("H: " + tempFMax + "°F   " + "   L:   " + tempFMin + "°F  ");    
   }
 
