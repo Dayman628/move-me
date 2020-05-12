@@ -47,23 +47,3 @@ function initSearch() {
     new google.maps.places.Autocomplete(input);
 }
 google.maps.event.addDomListener(window, 'load', initSearch);
-
-// Convert address into coordinates for accurate results
-function geocodeAddress(address) {
-    $.ajax({
-        url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=AIzaSyDnRG3kLW44MTYI0s7fplt8aQMFvRe1glQ",
-        method: "GET"
-    }).then(function (response) {
-        console.log(response);
-        currentLocation.lat = response.results[0].geometry.location.lat;
-        currentLocation.lng = response.results[0].geometry.location.lng;
-        revealMain();
-        locationChanged();
-    })
-}
-
-// When the search button is pressed
-$("#searchBtn").on("click", function(e) {
-    e.preventDefault();
-    geocodeAddress($("#userAddress").val());
-})
