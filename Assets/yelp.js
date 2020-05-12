@@ -1,14 +1,12 @@
 var search = {
     movers: true,
     storage: true,
-    supplies: true,
     trucks: true
 };
 
 var results = {
     movers: [],
     storage: [],
-    supplies: [],
     trucks: [],
 };
 
@@ -16,7 +14,6 @@ function completeSearches() {
     results = {
         movers: [],
         storage: [],
-        supplies: [],
         trucks: [],
     };
     if (search.movers === true) {
@@ -25,15 +22,11 @@ function completeSearches() {
     if (search.storage === true) {
         searchYelp('storage unit', results.storage);
     }
-    if (search.supplies === true) {
-        searchYelp('packing supplies', results.supplies);
-    }
     if (search.trucks === true) {
-        searchYelp('truck rental', results.movers);
+        searchYelp('truck rental', results.trucks);
     }
     if (search.movers === false
         && search.storage === false
-        && search.supplies === false
         && search.trucks === false) {
         $("#results").html("");
     }
