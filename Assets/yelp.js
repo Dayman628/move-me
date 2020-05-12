@@ -11,6 +11,7 @@ var results = {
 };
 
 function completeSearches() {
+    $("#results").html("");
     results = {
         movers: [],
         storage: [],
@@ -59,7 +60,6 @@ function searchYelp(search, arr) {
 
 // list the yelp results
 function listResults(arr) {
-    $("#results").html("");
     for (var i = 0; i < arr.length; i++) {
         var listItem = $("<div class='list-item'></div>");
         var name = $("<a target='_blank' href='" + arr[i].url + "'><h3>" + arr[i].name + "</h3></a>");

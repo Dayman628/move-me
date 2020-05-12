@@ -85,11 +85,6 @@ function loadIcons() {
         var storage = {};
         var trucks = {};
 
-
-        
-        
-        
-
         // Pins for map
        
         var pins = [
@@ -101,6 +96,7 @@ function loadIcons() {
             }
         ];
         if (results.movers.length) {
+            if (results.movers[i]) {
             movers = {
                 lat: results.movers[i].coords.latitude,
                 lng: results.movers[i].coords.longitude,
@@ -110,9 +106,10 @@ function loadIcons() {
                 pinType: 'movers',
                 pinName: results.movers[i].name,
                 pinURL: results.movers[i].url
-            });
+            })};
         }
         if (results.storage.length) {
+            if (results.storage[i]) {
             storage = {
                 lat: results.storage[i].coords.latitude,
                 lng: results.storage[i].coords.longitude,
@@ -122,9 +119,10 @@ function loadIcons() {
                 pinType: 'storage',
                 pinName: results.storage[i].name,
                 pinURL: results.storage[i].url
-            });
+            })};
         }
         if (results.trucks.length) {
+            if (results.trucks[i]) {
             trucks = {
                 lat: results.trucks[i].coords.latitude,
                 lng: results.trucks[i].coords.longitude,
@@ -134,7 +132,7 @@ function loadIcons() {
                 pinType: 'trucks',
                 pinName: results.trucks[i].name,
                 pinURL: results.trucks[i].url
-            });
+            })};
         }
         // var pins = [
 
