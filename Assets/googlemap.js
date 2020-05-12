@@ -118,7 +118,7 @@ function loadIcons() {
 
             var linkURL = becomes.pinURL;
             marker.addListener('click', function () {
-                window.location.href = linkURL;
+                window.open(linkURL);
             });
 
         });
