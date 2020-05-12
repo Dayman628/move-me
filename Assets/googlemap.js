@@ -22,6 +22,12 @@ function geocodeAddress(address) {
 $("#searchBtn").on("click", function(e) {
     e.preventDefault();
     geocodeAddress($("#userAddress").val());
+})
+
+// New address search button
+$("#newSearch").on("click", function(e) {
+    e.preventDefault();
+    geocodeAddress($("#newAddress").val());
 }) 
 
 // Obtains device location coordinates

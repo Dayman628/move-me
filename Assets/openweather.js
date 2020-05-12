@@ -1,5 +1,6 @@
 
 function getWeather(){
+  $("#weatherSpot").html("");
   var APIKey = "644e2fd49d4e3e04ae6b482ca8428be6";
 
   var longitude = currentLocation.lng;
