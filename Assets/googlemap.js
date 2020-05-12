@@ -54,9 +54,6 @@ function loadIcons() {
         storage: {
             icon: iconBase + 'warehouse.PNG'
         },
-        supplies: {
-            icon: iconBase + 'box-open.PNG'
-        },
         trucks: {
             icon: iconBase + 'truck.PNG'
         },
@@ -71,7 +68,7 @@ function loadIcons() {
             lng: results.movers[i].coords.longitude,
         };
         var storage = {
-            lat: results.storage[i].coords.latitude,    
+            lat: results.storage[i].coords.latitude,
             lng: results.storage[i].coords.longitude,
         };
         var trucks = {
@@ -86,20 +83,25 @@ function loadIcons() {
                 pinPosition: currentLocation,
                 pinType: 'location',
                 pinName: 'Home'
+
             },
             {
                 pinPosition: movers,
                 pinType: 'movers',
-                pinName: results.movers[i].name
+                pinName: results.movers[i].name,
+                pinURL: results.movers[i].url
             },
             {
                 pinPosition: storage,
                 pinType: 'storage',
-                pinName: results.storage[i].name
+                pinName: results.storage[i].name,
+                pinURL: results.storage[i].url
             },
             {
                 pinPosition: trucks,
                 pinType: 'trucks',
+                pinName: results.trucks[i].name,
+                pinURL: results.trucks[i].url
             },
         ];
 
