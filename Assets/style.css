@@ -25,7 +25,6 @@ footer {
   bottom: 0;
 }
 
-
 .hidden {
     display: none;
 }
@@ -65,9 +64,9 @@ footer {
     min-height: 50%;
   }
 
-  li {
-    font-size: 22px;
-  }
+li {
+  font-size: 22px;
+}
   
 input.checkbox {
   width: 17px;

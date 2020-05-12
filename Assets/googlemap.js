@@ -138,10 +138,24 @@ function loadIcons() {
 //     loadIcons.setMap(null);
 // }
 
-function deleteMarkers() {
-    clearMarkers();
-    markers = [];
-}
+// when a user unchecks, need to clear it out, and then RECHECK
+// function addMarker(location) {
+//     var marker = new google.maps.Marker({
+//         position: pins.position,
+//         icon: icons[pins.type].icon,
+//         map: map
+//     });
+//     markers.push(marker);
+// }
+//  // Removes the markers from the map, but keeps them in the array
+//   function clearMarkers() {
+//     setMapOnAll(null);
+// }
+// // Deletes all markers in the array
+//  function deleteMarkers() {
+//     clearMarkers();
+//     markers = [];
+// }
 
 // For loop to pin result, unused at the moment
 // function setMarker() {
@@ -154,4 +168,3 @@ function deleteMarkers() {
 //     // };
 // };
 // setMarker();
-
