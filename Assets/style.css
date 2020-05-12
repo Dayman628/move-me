@@ -25,7 +25,6 @@ footer {
   bottom: 0;
 }
 
-
 .hidden {
     display: none;
 }
@@ -54,6 +53,10 @@ footer {
     height: 200%;
   }
 
+  .navbar {
+    background-color: transparent;
+  }
+
   #bg img {
     position: absolute; 
     top: 0; 
@@ -65,9 +68,9 @@ footer {
     min-height: 50%;
   }
 
-  li {
-    font-size: 22px;
-  }
+li {
+  font-size: 22px;
+}
   
 input.checkbox {
   width: 17px;
@@ -82,11 +85,6 @@ input.checkbox {
 #results {
   max-height: 200px;
   overflow: auto;
-}
-
-.showNav {
-  background-color: rgb(140, 212, 212);
-  padding: 10px;
 }
 
 .level {
