@@ -1,8 +1,5 @@
-// Using Google Maps API to autocomplete the search bar
-// function initSearch() {
-//     var input = document.getElementById('search-bar');
-//     new google.maps.places.Autocomplete(input);
-// }
+
+
 // google.maps.event.addDomListener(window, 'load', initSearch);
 
 // Default current location
@@ -83,7 +80,6 @@ function loadIcons() {
                 pinPosition: currentLocation,
                 pinType: 'location',
                 pinName: 'Home'
-
             },
             {
                 pinPosition: movers,
@@ -120,9 +116,11 @@ function loadIcons() {
             markers.push(marker)
             infowindow.open(map, marker);
 
-            // marker.addListener('click', function () {
-            //     clearMarkers();
-            // });
+            var linkURL = becomes.pinURL;
+            marker.addListener('click', function () {
+                window.open(linkURL);
+            });
+
         });
 
     };
