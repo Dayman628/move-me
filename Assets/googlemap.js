@@ -55,6 +55,10 @@ function initMap() {
     });
 };
 
+function mapCenter(coords) {
+    map.setCenter(coords);
+}
+
 // Load icons function to be called when Yelp list is loaded
 function loadIcons() {
 
@@ -173,14 +177,8 @@ function loadIcons() {
                 icon: icons[becomes.pinType].icon,
                 map: map
             });
-            markers.push(marker)
+            markers.push(marker);
             infowindow.open(map, marker);
-
-            var linkURL = becomes.pinURL;
-            marker.addListener('click', function () {
-                window.open(linkURL);
-            });
-
         });
 
     };
