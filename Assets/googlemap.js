@@ -33,6 +33,12 @@ function initMap() {
     });
 };
 
+// // Deletes all markers in the array
+ function deleteMarkers() {
+    clearMarkers();
+    markers = [];
+}
+
 // Load icons function to be called when Yelp list is loaded
 function loadIcons() {
 
@@ -133,27 +139,15 @@ function loadIcons() {
 };
 
 // Clear out pin function for when boxes are unchecked and then reload
-// removes the marker from the map
+
 
 // when a user unchecks, need to clear it out, and then RECHECK
-function addMarker(location) {
-    var marker = new google.maps.Marker({
-        position: pins.position,
-        icon: icons[pins.type].icon,
-        map: map
-    });
-    markers.push(marker);
-}
 
 // Removes the markers from the map, but keeps them in the array
-  function clearMarkers() {
-    setMapOnAll(null);
-}
-// Deletes all markers in the array
- function deleteMarkers() {
-    clearMarkers();
-    markers = [];
-}
+//   function clearMarkers() {
+//     loadIcons.setMap(null);
+// }
+
 
 // For loop to pin result, unused at the moment
 // function setMarker() {
