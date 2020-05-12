@@ -87,47 +87,87 @@ function loadIcons() {
     // Convert the long/lat data for use with map pins
     for (let i = 0; i < 3; i++) {
         // var info = results.movers[i].name;
+        var movers = {};
+        var storage = {};
+        var trucks = {};
 
-        var movers = {
-            lat: results.movers[i].coords.latitude,
-            lng: results.movers[i].coords.longitude,
-        };
-        var storage = {
-            lat: results.storage[i].coords.latitude,
-            lng: results.storage[i].coords.longitude,
-        };
-        var trucks = {
-            lat: results.trucks[i].coords.latitude,
-            lng: results.trucks[i].coords.longitude,
-        };
+
+        
+        
+        
 
         // Pins for map
+       
         var pins = [
 
             {
                 pinPosition: currentLocation,
                 pinType: 'location',
                 pinName: 'Home'
-            },
-            {
+            }
+        ];
+        if (results.movers.length) {
+            movers = {
+                lat: results.movers[i].coords.latitude,
+                lng: results.movers[i].coords.longitude,
+            };
+            pins.push({
                 pinPosition: movers,
                 pinType: 'movers',
                 pinName: results.movers[i].name,
                 pinURL: results.movers[i].url
-            },
-            {
+            });
+        }
+        if (results.storage.length) {
+            storage = {
+                lat: results.storage[i].coords.latitude,
+                lng: results.storage[i].coords.longitude,
+            };
+            pins.push({
                 pinPosition: storage,
                 pinType: 'storage',
                 pinName: results.storage[i].name,
                 pinURL: results.storage[i].url
-            },
-            {
+            });
+        }
+        if (results.trucks.length) {
+            trucks = {
+                lat: results.trucks[i].coords.latitude,
+                lng: results.trucks[i].coords.longitude,
+            };
+            pins.push({
                 pinPosition: trucks,
                 pinType: 'trucks',
                 pinName: results.trucks[i].name,
                 pinURL: results.trucks[i].url
-            },
-        ];
+            });
+        }
+        // var pins = [
+
+        //     {
+        //         pinPosition: currentLocation,
+        //         pinType: 'location',
+        //         pinName: 'Home'
+        //     },
+        //     {
+        //         pinPosition: movers,
+        //         pinType: 'movers',
+        //         pinName: results.movers[i].name,
+        //         pinURL: results.movers[i].url
+        //     },
+        //     {
+        //         pinPosition: storage,
+        //         pinType: 'storage',
+        //         pinName: results.storage[i].name,
+        //         pinURL: results.storage[i].url
+        //     },
+        //     {
+        //         pinPosition: trucks,
+        //         pinType: 'trucks',
+        //         pinName: results.trucks[i].name,
+        //         pinURL: results.trucks[i].url
+        //     },
+        // ];
 
         // For each loop to pin each result
         pins.forEach(function (becomes) {
