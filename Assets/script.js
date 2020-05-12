@@ -13,6 +13,7 @@ var mainScreen = false;
 // function for when the current location changes
 function locationChanged() {
     completeSearches();
+    getWeather();
 }
 
 // reveal the main page
@@ -44,6 +45,8 @@ $("#loadicon").on("click", function () {
 // Using Google Maps API to autocomplete the search bar
 function initSearch() {
     var input = document.getElementById('userAddress');
+    new google.maps.places.Autocomplete(input);
+    var input = document.getElementById('newAddress');
     new google.maps.places.Autocomplete(input);
 }
 google.maps.event.addDomListener(window, 'load', initSearch);
