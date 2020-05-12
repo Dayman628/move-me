@@ -53,6 +53,10 @@ footer {
     height: 200%;
   }
 
+  .navbar {
+    background-color: transparent;
+  }
+
   #bg img {
     position: absolute; 
     top: 0; 
@@ -81,11 +85,6 @@ input.checkbox {
 #results {
   max-height: 200px;
   overflow: auto;
-}
-
-.showNav {
-  background-color: rgb(253, 170, 131);
-  padding: 10px;
 }
 
 .level {
