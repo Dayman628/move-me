@@ -132,11 +132,27 @@ function loadIcons() {
     // console.log(movers.lng);
 };
 
-// Clear out pin function for when boxes are unchecked
+// Clear out pin function for when boxes are unchecked and then reload
+// removes the marker from the map
 // function clearMarkers() {
-//     loadIcons(null);
+//     loadIcons.setMap(null);
 // }
-// function deleteMarkers() {
+
+// when a user unchecks, need to clear it out, and then RECHECK
+// function addMarker(location) {
+//     var marker = new google.maps.Marker({
+//         position: pins.position,
+//         icon: icons[pins.type].icon,
+//         map: map
+//     });
+//     markers.push(marker);
+// }
+//  // Removes the markers from the map, but keeps them in the array
+//   function clearMarkers() {
+//     setMapOnAll(null);
+// }
+// // Deletes all markers in the array
+//  function deleteMarkers() {
 //     clearMarkers();
 //     markers = [];
 // }
@@ -152,4 +168,3 @@ function loadIcons() {
 //     // };
 // };
 // setMarker();
-
