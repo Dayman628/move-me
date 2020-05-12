@@ -19,8 +19,6 @@ function locationChanged() {
 function revealMain() {
     $(".front-page").attr("class", "hidden");
     $(".main-page").removeClass("hidden");
-    $("#bg").attr("class", "hidden");
-    $(".navbar").addClass("showNav");
     mainScreen = true;
 };
 
@@ -49,4 +47,3 @@ function initSearch() {
     new google.maps.places.Autocomplete(input);
 }
 google.maps.event.addDomListener(window, 'load', initSearch);
-
