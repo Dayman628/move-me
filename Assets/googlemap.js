@@ -80,7 +80,6 @@ function loadIcons() {
                 pinPosition: currentLocation,
                 pinType: 'location',
                 pinName: 'Home'
-
             },
             {
                 pinPosition: movers,
@@ -117,9 +116,11 @@ function loadIcons() {
             markers.push(marker)
             infowindow.open(map, marker);
 
-            // marker.addListener('click', function () {
-            //     clearMarkers();
-            // });
+            var linkURL = becomes.pinURL;
+            marker.addListener('click', function () {
+                window.location.href = linkURL;
+            });
+
         });
 
     };
