@@ -141,14 +141,16 @@ function loadIcons() {
     // console.log(movers.lng);
 };
 
-// Clear out pin function for when boxes are unchecked
+// Clear out pin function for when boxes are unchecked and then reload
+// removes the marker from the map
 // function clearMarkers() {
-//     loadIcons(null);
+//     loadIcons.setMap(null);
 // }
-// function deleteMarkers() {
-//     clearMarkers();
-//     markers = [];
-// }
+
+function deleteMarkers() {
+    clearMarkers();
+    markers = [];
+}
 
 // For loop to pin result, unused at the moment
 // function setMarker() {
