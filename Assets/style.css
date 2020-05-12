@@ -14,7 +14,6 @@
 }
 
 footer {
-  background-color: white;
   padding: 1.5rem 6rem;
   color: rgb(140, 212, 212);
   position: fixed;
@@ -95,19 +94,3 @@ input.checkbox {
   width: 240px;
 }
 
-@keyframes myanimation
-{
-    0% {
-        left: 0;
-    }
-    10% {
-        left: 50%;
-    }
-    100% {
-        left: 10%;
-    }
-}
-
-#moving-truck {
-  animation: myanimation 5s;
-}
