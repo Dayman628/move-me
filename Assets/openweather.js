@@ -19,29 +19,46 @@ function getWeather(){
 
     var weatherSpotDiv = $("#weatherSpot");
     weatherSpotDiv.css('text-align','center');
-    weatherSpotDiv.css('background-color','white');
+    weatherSpotDiv.css('padding-left','440px');
+
     weatherSpotDiv.css('display', 'inline-flex');
+    weatherSpotDiv.css('background-image', 'linear-gradient(to bottom, rgba(140,212,212,0), rgba(140,212,212,1))');
+    weatherSpotDiv.css('border','15px 50px 30px 5px')
+
+    var cityName = $("<h3>");
+    weatherSpotDiv.append(cityName);
+    cityName.css("font-size", "20px");
+    cityName.text("Weather Forecast for your city")
+    cityName.css('padding-top','32px')
+    cityName.css('font-weight','bolder')
+    cityName.css('font-family', 'Amatic SC cursive')
+
+
 
     for (var i = 0; i < 5; i++) {
       var eachDayDiv = $("<div>");
       eachDayDiv.addClass(dayArray[i]);
       eachDayDiv.css('padding', '5px');
-      eachDayDiv.css('border', '5px solid rgb(140, 212, 212)'); 
+      //eachDayDiv.css('border', '5px solid rgb(140, 212, 212)'); 
       eachDayDiv.css('border-radius','10%');
+      //eachDayDiv.css('background-color','transparent')
       weatherSpotDiv.append(eachDayDiv);
       
       // Displaying day of the week
       var timeValue = $("<p>");
       eachDayDiv.append(timeValue);
-      timeValue.css("font-size", "10px");
+      timeValue.css("font-size", "16px");
       // JSON timestamp
       var timeStamp = response.daily[i].dt;
+     // timeValue.css('color','rgb(140, 212, 212)')
+      timeValue.css('font-weight','bold')
     
       // Convert timestamp to milliseconds
       var date = new Date(timeStamp*1000);
       var days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
       var dayOfWeek = days[date.getDay()]
       timeValue.text(dayOfWeek)
+      
       
       // Displaying weather icon
       var iconEl = $("<img>");
@@ -50,19 +67,21 @@ function getWeather(){
       var iconId = response.daily[i].weather[0].icon;
       var iconLink = "http://openweathermap.org/img/wn/" + iconId + "@2x.png";
       $("." + iconArray[i]).attr("src",iconLink);
-      $("." + iconArray[i]).width(30); 
-      $("." + iconArray[i]).height(30);
+      $("." + iconArray[i]).width(45); 
+      $("." + iconArray[i]).height(45);
 
       // Displaying High and Low Temperature
       var dayOneDiv = $("<div>");
       eachDayDiv.append(dayOneDiv);
       dayOneDiv.addClass(tempArray[i]);
-      dayOneDiv.css("font-size", "10px");
+      dayOneDiv.css("font-size", "12px");
+      //dayOneDiv.css('font-weight','bolder')
+      //dayOneDiv.css('color','rgb(140, 212, 212)')
     
       // to fahrenheit
       var tempFMax = (parseInt(response.daily[i].temp.max - 273.15) * 1.80 + 32).toFixed(0);
       var tempFMin = (parseInt(response.daily[i].temp.min - 273.15) * 1.80 + 32).toFixed(0);
-      dayOneDiv.text("H: " + tempFMax + "°F   " + "   L:   " + tempFMin + "°F  ");    
+      dayOneDiv.text(tempFMax + "°F   " + " / " + tempFMin + "°F  ");    
     }
   });
 }
