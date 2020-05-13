@@ -67,7 +67,7 @@ function listResults(arr) {
         listItem.append(name, rating);
         $("#results").append(listItem);
     }
-    $(".yelpResult").on("click", function(event) {
+    $(".yelpResult").on("click", function (event) {
         event.preventDefault();
         var listLatitude = parseFloat($(this).attr("data-lat"));
         var listLongitude = parseFloat($(this).attr("data-lng"));
