@@ -19,16 +19,16 @@ function geocodeAddress(address) {
 }
 
 // When the search button is pressed
-$("#searchBtn").on("click", function(e) {
+$("#searchBtn").on("click", function (e) {
     e.preventDefault();
     geocodeAddress($("#userAddress").val());
 })
 
 // New address search button
-$("#newSearch").on("click", function(e) {
+$("#newSearch").on("click", function (e) {
     e.preventDefault();
     geocodeAddress($("#newAddress").val());
-}) 
+})
 
 // Obtains device location coordinates
 function getLocation() {
@@ -44,7 +44,7 @@ function getLocation() {
     }
 }
 
-// Code that initializes the google map
+// Function that initializes Google Map
 var markers = []
 var map;
 function initMap() {
@@ -65,7 +65,7 @@ function loadIcons() {
     // Reloads map
     initMap();
 
-    // Icon block
+    // Icons block
     var iconBase = 'https://raw.githubusercontent.com/Dayman628/move-me/master/Assets/';
     var icons = {
         location: {
@@ -82,15 +82,14 @@ function loadIcons() {
         },
     };
 
-    // Convert the long/lat data for use with map pins
-    for (let i = 0; i < 3; i++) {
-        // var info = results.movers[i].name;
+    // Conversion of coordinates and integration of icon markers into pins
+    for (let i = 0; i < 5; i++) {
+        // Empty objects for the pin information
         var movers = {};
         var storage = {};
         var trucks = {};
 
-        // Pins for map
-       
+        // Pins array and contents for map
         var pins = [
 
             {
