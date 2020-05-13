@@ -107,7 +107,7 @@ function loadIcons() {
             pins.push({
                 pinPosition: movers,
                 pinType: 'movers',
-                pinName: "<div><a href=" + results.movers[i].url + ">" + results.movers[i].name + "</a>" +
+                pinName: "<div><a target='_blank' href=" + results.movers[i].url + ">" + results.movers[i].name + "</a>" +
                 "<div><img src='" + results.movers[i].stars + "'>  <i style='color: #d32323;' class='fab fa-yelp'></i></div>" +
                 "</div>",
                 pinURL: results.movers[i].url
@@ -122,7 +122,7 @@ function loadIcons() {
             pins.push({
                 pinPosition: storage,
                 pinType: 'storage',
-                pinName: "<div><a href=" + results.storage[i].url + ">" + results.storage[i].name + "</a>" +
+                pinName: "<div><a target='_blank' href=" + results.storage[i].url + ">" + results.storage[i].name + "</a>" +
                 "<div><img src='" + results.storage[i].stars + "'>  <i style='color: #d32323;' class='fab fa-yelp'></i></div>" +
                 "</div>",
                 pinURL: results.storage[i].url
@@ -137,7 +137,7 @@ function loadIcons() {
             pins.push({
                 pinPosition: trucks,
                 pinType: 'trucks',
-                pinName: "<div><a href=" + results.trucks[i].url + ">" + results.trucks[i].name + "</a>" +
+                pinName: "<div><a target='_blank' href=" + results.trucks[i].url + ">" + results.trucks[i].name + "</a>" +
                 "<div><img src='" + results.trucks[i].stars + "'>  <i style='color: #d32323;' class='fab fa-yelp'></i></div>" +
                 "</div>",
                 pinURL: results.trucks[i].url
@@ -183,10 +183,8 @@ function loadIcons() {
                 map: map,
             });
             markers.push(marker);
-            infowindow.open(map, marker);
-            var linkURL = becomes.pinURL;
             marker.addListener('click', function () {
-                window.location.href = linkURL;
+                infowindow.open(map, marker);
             });
         });
 
