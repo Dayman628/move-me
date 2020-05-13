@@ -68,7 +68,7 @@ function loadIcons() {
     initMap();
 
     // Icons block
-    var iconBase = 'https://raw.githubusercontent.com/Dayman628/move-me/master/Assets/';
+    var iconBase = 'https://raw.githubusercontent.com/Dayman628/move-me/master/Assets/images';
     var icons = {
         location: {
             icon: iconBase + 'house.PNG'
