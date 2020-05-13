@@ -68,7 +68,7 @@ function loadIcons() {
     initMap();
 
     // Icons block
-    var iconBase = 'https://raw.githubusercontent.com/Dayman628/move-me/master/Assets/images';
+    var iconBase = 'https://raw.githubusercontent.com/Dayman628/move-me/master/Assets/images/';
     var icons = {
         location: {
             icon: iconBase + 'house.PNG'
@@ -85,7 +85,7 @@ function loadIcons() {
     };
 
     // Conversion of coordinates and integration of icon markers into pins
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 7; i++) {
         // Empty objects for the pin information
         var movers = {};
         var storage = {};
@@ -148,8 +148,6 @@ function loadIcons() {
 
         // For each loop to pin each result
         pins.forEach(function (becomes) {
-
-
 
             var infowindow = new google.maps.InfoWindow({
                 content: becomes.pinInfo
