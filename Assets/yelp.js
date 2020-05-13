@@ -11,6 +11,7 @@ var results = {
 };
 
 function completeSearches() {
+    $("#results").html("");
     results = {
         movers: [],
         storage: [],
@@ -59,15 +60,23 @@ function searchYelp(search, arr) {
 
 // list the yelp results
 function listResults(arr) {
-    $("#results").html("");
     for (var i = 0; i < arr.length; i++) {
-        var listItem = $("<div class='list-item'></div>");
-        var name = $("<a target='_blank' href='" + arr[i].url + "'><h3>" + arr[i].name + "</h3></a>");
+        var listItem = $("<a class='list-item yelpResult' data-lat='" + arr[i].coords.latitude + "' data-lng='" + arr[i].coords.longitude + "'>" + arr[i].name + "</a>");
         setRating(arr[i]);
-        var rating = $("<img src='" + arr[i].stars + "'>  <i style='color: #d32323;' class='fab fa-yelp'></i>");
+        var rating = $("<br><img src='" + arr[i].stars + "'>  <i style='color: #d32323;' class='fab fa-yelp'></i>");
         listItem.append(name, rating);
         $("#results").append(listItem);
     }
+    $(".yelpResult").on("click", function(event) {
+        event.preventDefault();
+        var listLatitude = parseFloat($(this).attr("data-lat"));
+        var listLongitude = parseFloat($(this).attr("data-lng"));
+        var coords = {
+            lat: listLatitude,
+            lng: listLongitude
+        }
+        mapCenter(coords);
+    })
     loadIcons();
 }
 
@@ -119,3 +128,5 @@ $(".filter").on("change", function (event) {
     // deleteMarkers();
     // loadIcons();
 })
+
+

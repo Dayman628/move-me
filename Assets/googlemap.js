@@ -55,6 +55,10 @@ function initMap() {
     });
 };
 
+function mapCenter(coords) {
+    map.setCenter(coords);
+}
+
 // Load icons function to be called when Yelp list is loaded
 function loadIcons() {
 
@@ -95,6 +99,7 @@ function loadIcons() {
             }
         ];
         if (results.movers.length) {
+            if (results.movers[i]) {
             movers = {
                 lat: results.movers[i].coords.latitude,
                 lng: results.movers[i].coords.longitude,
@@ -102,11 +107,14 @@ function loadIcons() {
             pins.push({
                 pinPosition: movers,
                 pinType: 'movers',
-                pinName: results.movers[i].name,
+                pinName: "<div><a href=" + results.movers[i].url + ">" + results.movers[i].name + "</a>" +
+                "<div><img src='" + results.movers[i].stars + "'>  <i style='color: #d32323;' class='fab fa-yelp'></i></div>" +
+                "</div>",
                 pinURL: results.movers[i].url
-            });
+            })};
         }
         if (results.storage.length) {
+            if (results.storage[i]) {
             storage = {
                 lat: results.storage[i].coords.latitude,
                 lng: results.storage[i].coords.longitude,
@@ -114,11 +122,14 @@ function loadIcons() {
             pins.push({
                 pinPosition: storage,
                 pinType: 'storage',
-                pinName: results.storage[i].name,
+                pinName: "<div><a href=" + results.storage[i].url + ">" + results.storage[i].name + "</a>" +
+                "<div><img src='" + results.storage[i].stars + "'>  <i style='color: #d32323;' class='fab fa-yelp'></i></div>" +
+                "</div>",
                 pinURL: results.storage[i].url
-            });
+            })};
         }
         if (results.trucks.length) {
+            if (results.trucks[i]) {
             trucks = {
                 lat: results.trucks[i].coords.latitude,
                 lng: results.trucks[i].coords.longitude,
@@ -126,9 +137,11 @@ function loadIcons() {
             pins.push({
                 pinPosition: trucks,
                 pinType: 'trucks',
-                pinName: results.trucks[i].name,
+                pinName: "<div><a href=" + results.trucks[i].url + ">" + results.trucks[i].name + "</a>" +
+                "<div><img src='" + results.trucks[i].stars + "'>  <i style='color: #d32323;' class='fab fa-yelp'></i></div>" +
+                "</div>",
                 pinURL: results.trucks[i].url
-            });
+            })};
         }
         // var pins = [
 
@@ -167,16 +180,14 @@ function loadIcons() {
             var marker = new google.maps.Marker({
                 position: becomes.pinPosition,
                 icon: icons[becomes.pinType].icon,
-                map: map
+                map: map,
             });
-            markers.push(marker)
+            markers.push(marker);
             infowindow.open(map, marker);
-
             var linkURL = becomes.pinURL;
             marker.addListener('click', function () {
-                window.open(linkURL);
+                window.location.href = linkURL;
             });
-
         });
 
     };

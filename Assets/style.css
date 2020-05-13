@@ -94,3 +94,7 @@ input.checkbox {
   width: 240px;
 }
 
+.list-item:hover {
+  background-color: lightblue;
+}
+
