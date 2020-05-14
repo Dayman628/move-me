@@ -14,7 +14,7 @@
 
 <body>
   <div id="bg">
-    <img src="./Assets/clouds.png">
+    <img src="./Assets/images/clouds.png">
   </div>
 
   <!-- This is the front page, which will show on default -->
@@ -23,10 +23,10 @@
     <!-- add MOVEME at low opacity up top -->
     <div class="field is-grouped">
       <p class="control is-expanded">
-        <input class="input" id="userAddress" type="text" placeholder="Address">
+        <input class="input" id="userAddress" type="text" placeholder="Search an Address!">
       </p>
       <p class="control">
-        <a class="button is-primary" id="searchBtn">
+        <a class="button is-primary" style="float: left;" id="searchBtn">
           Search
         </a>
       </p>
@@ -42,52 +42,45 @@
     <br>
     <p class="motto">Moving made easier.</p>
     <div id="moving-truck">
-      <img src="Assets/moving-car.gif" alt="truck" height="300" width="400">
+      <img src="./Assets/images/moving-car.gif" alt="truck" height="" width="">
     </div>
   </section>
 
   <!-- This is the second page, that becomes visible when user submits address -->
   <section class="section main-page hidden">
-    <header>
-      <nav class="navbar is-fixed-top">
-        <!-- This is where the company logo goes -->
-        <div class="nav-item navbar-brand" id="company-logo">
-          <img src="Assets/movemebanner.png" alt="placeholder" />
-        </div>
-        <!-- this is where the weather will go -->
-        <div id="weatherSpot" class="nav-item navbar-end">
-      </nav>
-    </header>
-
     <br>
-    <br>
+    <br> 
 
     <div class="level">
       <div class="row">
+        <div class="nav-item navbar-brand" id="company-logo">
+          <img src="./Assets/images/movemebanner.png" alt="placeholder" />
+        </div>
+        <div id="cityName"></div>
+        <div id="weatherSpot"></div>
         <div class="column buttons">
-          <input class="input" type="text" id="newAddress" placeholder="New address">
+          <input class="input" type="text" id="newAddress" placeholder="Search a different Address!">
           <a id="newSearch" class="button is-primary"><i class="fa fa-search"></i></a>
           <br>
-
         </div>
 
         <ul>
           <li>
             <label class="checkbox filter" data-filter="movers">
               <input type="checkbox" class="checkbox" checked>
-              <i class="fas fa-people-carry"></i> Movers
+              <i style="color: rgb(153, 0, 0)" class="fas fa-people-carry"></i> Movers
             </label>
           </li>
           <li>
             <label class="checkbox filter" data-filter="storage">
               <input type="checkbox" class="checkbox" checked>
-              <i class="fas fa-warehouse"></i> Storage
+              <i style="color: rgb(100, 0, 100)" class="fas fa-warehouse"></i> Storage
             </label>
           </li>
           <li>
             <label class="checkbox filter" data-filter="trucks">
               <input type="checkbox" class="checkbox" checked>
-              <i class="fas fa-truck"></i> Rent a Truck
+              <i style="color: rgb(203, 102, 0)" class="fas fa-truck"></i> Rent a Truck
             </label>
           </li>
         </ul>
@@ -96,6 +89,10 @@
 
         <div id="results" class="list is-hoverable">
           Search Results will go below
+        </div>
+        <div>
+          <button class="button is-primary" id="viewPinInfo">View All Marker Info</button>
+          <button class="button is-primary" id="clearPinInfo">Clear All Marker Info</button>
         </div>
       </div>
 

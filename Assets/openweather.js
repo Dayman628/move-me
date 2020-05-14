@@ -21,7 +21,6 @@ function getWeather(){
 
     var weatherSpotDiv = $("#weatherSpot");
     weatherSpotDiv.css('text-align','center');
-    //weatherSpotDiv.css('padding-left','440px');
 
     weatherSpotDiv.css('display', 'inline-flex');
     weatherSpotDiv.css('background-image', 'linear-gradient(to bottom, rgba(140,212,212,0), rgba(140,212,212,1))');
