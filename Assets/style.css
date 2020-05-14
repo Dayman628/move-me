@@ -69,6 +69,7 @@ footer {
 
 li {
   font-size: 22px;
+  color: rgb(84, 173, 166);
 }
   
 input.checkbox {
@@ -84,10 +85,6 @@ input.checkbox {
 #results {
   max-height: 200px;
   overflow: auto;
-}
-
-.level {
-  text-align: center;
 }
 
 .input {
