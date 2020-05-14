@@ -14,7 +14,7 @@
 
 <body>
   <div id="bg">
-    <img src="./Assets/clouds.png">
+    <img src="./Assets/images/clouds.png">
   </div>
 
   <!-- This is the front page, which will show on default -->
@@ -23,7 +23,7 @@
     <!-- add MOVEME at low opacity up top -->
     <div class="field is-grouped">
       <p class="control is-expanded">
-        <input class="input" id="userAddress" type="text" placeholder="Address">
+        <input class="input" id="userAddress" type="text" placeholder="Search an Address!">
       </p>
       <p class="control">
         <a class="button is-primary" id="searchBtn">
@@ -42,7 +42,7 @@
     <br>
     <p class="motto">Moving made easier.</p>
     <div id="moving-truck">
-      <img src="Assets/moving-car.gif" alt="truck" height="300" width="400">
+      <img src="./Assets/images/moving-car.gif" alt="truck" height="" width="">
     </div>
   </section>
 
@@ -51,9 +51,9 @@
     <header>
       <nav class="navbar is-fixed-top">
         <!-- This is where the company logo goes -->
-        <div class="nav-item navbar-brand" id="company-logo">
-          <img src="Assets/company-logo.png" alt="placeholder" />
-        </div>
+        <!-- <div class="nav-item navbar-brand" id="company-logo">
+          <img src="./Assets/images/movemebanner.png" alt="placeholder" />
+        </div> -->
         <!-- this is where the weather will go -->
         <div id="weatherSpot" class="nav-item navbar-end"></div>
       </nav>
@@ -64,8 +64,11 @@
 
     <div class="level">
       <div class="row">
+        <div class="nav-item navbar-brand" id="company-logo">
+          <img src="./Assets/images/movemebanner.png" alt="placeholder" />
+        </div>
         <div class="column buttons">
-          <input class="input" type="text" id="newAddress" placeholder="New address">
+          <input class="input" type="text" id="newAddress" placeholder="Search a different Address!">
           <a id="newSearch" class="button is-primary"><i class="fa fa-search"></i></a>
           <br>
         </div>
@@ -96,7 +99,10 @@
         <div id="results" class="list is-hoverable">
           Search Results will go below
         </div>
-        <button id="loadicon">SEE RESULTS ON THE MAP</button>
+        <div>
+          <button class="button is-primary" id="viewPinInfo">View All Marker Info</button>
+          <button class="button is-primary" id="clearPinInfo">Clear All Marker Info</button>
+        </div>
       </div>
 
       <!-- this is for the map -->
@@ -107,10 +113,11 @@
 
   </section>
 
-  
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="./assets/googlemap.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDetpwAhpDkX4o4m6ZJRGqMedOgP-_PvXw&libraries=places&callback=initMap"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDetpwAhpDkX4o4m6ZJRGqMedOgP-_PvXw&libraries=places&callback=initMap"></script>
   <script src="./assets/script.js"></script>
   <script src="./assets/yelp.js"></script>
   <script src="./assets/openweather.js"></script>
@@ -120,7 +127,8 @@
 <footer>
   <p>
     <!-- twitter link? -->
-    <strong style="color:rgb(108, 187, 187);">Move Me</strong> by <a href="https://assets.katomcdn.com/q_auto,f_auto/products/634/634-15141/634-15141.jpg" target="_blank">GLASS</a>
+    <strong style="color:rgb(108, 187, 187);">Move Me</strong> by <a
+      href="https://assets.katomcdn.com/q_auto,f_auto/products/634/634-15141/634-15141.jpg" target="_blank">GLASS</a>
   </p>
 </footer>
 

@@ -19,16 +19,16 @@ function geocodeAddress(address) {
 }
 
 // When the search button is pressed
-$("#searchBtn").on("click", function(e) {
+$("#searchBtn").on("click", function (e) {
     e.preventDefault();
     geocodeAddress($("#userAddress").val());
 })
 
 // New address search button
-$("#newSearch").on("click", function(e) {
+$("#newSearch").on("click", function (e) {
     e.preventDefault();
     geocodeAddress($("#newAddress").val());
-}) 
+})
 
 // Obtains device location coordinates
 function getLocation() {
@@ -44,7 +44,7 @@ function getLocation() {
     }
 }
 
-// Code that initializes the google map
+// Function that initializes Google Map
 var markers = []
 var map;
 function initMap() {
@@ -55,11 +55,10 @@ function initMap() {
     });
 };
 
-// // Deletes all markers in the array
- function deleteMarkers() {
-    clearMarkers();
-    markers = [];
+function mapCenter(coords) {
+    map.setCenter(coords);
 }
+
 
 // Load icons function to be called when Yelp list is loaded
 function loadIcons() {
@@ -67,8 +66,8 @@ function loadIcons() {
     // Reloads map
     initMap();
 
-    // Icon block
-    var iconBase = 'https://raw.githubusercontent.com/Dayman628/move-me/master/Assets/';
+    // Icons block
+    var iconBase = 'https://raw.githubusercontent.com/Dayman628/move-me/master/Assets/images/';
     var icons = {
         location: {
             icon: iconBase + 'house.PNG'
@@ -84,120 +83,99 @@ function loadIcons() {
         },
     };
 
-    // Convert the long/lat data for use with map pins
-    for (let i = 0; i < 3; i++) {
-        // var info = results.movers[i].name;
+    // Conversion of coordinates and integration of icon markers into pins
+    for (let i = 0; i < 7; i++) {
+        // Empty objects for the pin information
         var movers = {};
         var storage = {};
         var trucks = {};
 
-
-        
-        
-        
-
-        // Pins for map
-       
+        // Pins array and contents for map
         var pins = [
 
             {
                 pinPosition: currentLocation,
                 pinType: 'location',
-                pinName: 'Home'
+                pinInfo: 'HOME'
             }
         ];
         if (results.movers.length) {
-            movers = {
-                lat: results.movers[i].coords.latitude,
-                lng: results.movers[i].coords.longitude,
+            if (results.movers[i]) {
+                movers = {
+                    lat: results.movers[i].coords.latitude,
+                    lng: results.movers[i].coords.longitude,
+                };
+                pins.push({
+                    pinPosition: movers,
+                    pinType: 'movers',
+                    pinInfo: "<div><a target='_blank' href=" + results.movers[i].url + ">" + results.movers[i].name + "</a>" +
+                        "<div><img src='" + results.movers[i].stars + "'>  <i style='color: #d32323;' class='fab fa-yelp'></i></div>" +
+                        "</div>",
+                })
             };
-            pins.push({
-                pinPosition: movers,
-                pinType: 'movers',
-                pinName: results.movers[i].name,
-                pinURL: results.movers[i].url
-            });
         }
         if (results.storage.length) {
-            storage = {
-                lat: results.storage[i].coords.latitude,
-                lng: results.storage[i].coords.longitude,
+            if (results.storage[i]) {
+                storage = {
+                    lat: results.storage[i].coords.latitude,
+                    lng: results.storage[i].coords.longitude,
+                };
+                pins.push({
+                    pinPosition: storage,
+                    pinType: 'storage',
+                    pinInfo: "<div><a target='_blank' href=" + results.storage[i].url + ">" + results.storage[i].name + "</a>" +
+                        "<div><img src='" + results.storage[i].stars + "'>  <i style='color: #d32323;' class='fab fa-yelp'></i></div>" +
+                        "</div>",
+                })
             };
-            pins.push({
-                pinPosition: storage,
-                pinType: 'storage',
-                pinName: results.storage[i].name,
-                pinURL: results.storage[i].url
-            });
         }
         if (results.trucks.length) {
-            trucks = {
-                lat: results.trucks[i].coords.latitude,
-                lng: results.trucks[i].coords.longitude,
+            if (results.trucks[i]) {
+                trucks = {
+                    lat: results.trucks[i].coords.latitude,
+                    lng: results.trucks[i].coords.longitude,
+                };
+                pins.push({
+                    pinPosition: trucks,
+                    pinType: 'trucks',
+                    pinInfo: "<div><a target='_blank' href=" + results.trucks[i].url + ">" + results.trucks[i].name + "</a>" +
+                        "<div><img src='" + results.trucks[i].stars + "'>  <i style='color: #d32323;' class='fab fa-yelp'></i></div>" +
+                        "</div>",
+                })
             };
-            pins.push({
-                pinPosition: trucks,
-                pinType: 'trucks',
-                pinName: results.trucks[i].name,
-                pinURL: results.trucks[i].url
-            });
         }
-        // var pins = [
-
-        //     {
-        //         pinPosition: currentLocation,
-        //         pinType: 'location',
-        //         pinName: 'Home'
-        //     },
-        //     {
-        //         pinPosition: movers,
-        //         pinType: 'movers',
-        //         pinName: results.movers[i].name,
-        //         pinURL: results.movers[i].url
-        //     },
-        //     {
-        //         pinPosition: storage,
-        //         pinType: 'storage',
-        //         pinName: results.storage[i].name,
-        //         pinURL: results.storage[i].url
-        //     },
-        //     {
-        //         pinPosition: trucks,
-        //         pinType: 'trucks',
-        //         pinName: results.trucks[i].name,
-        //         pinURL: results.trucks[i].url
-        //     },
-        // ];
 
         // For each loop to pin each result
         pins.forEach(function (becomes) {
 
             var infowindow = new google.maps.InfoWindow({
-                content: becomes.pinName
+                content: becomes.pinInfo
             });
 
             var marker = new google.maps.Marker({
                 position: becomes.pinPosition,
                 icon: icons[becomes.pinType].icon,
-                map: map
+                map: map,
             });
-            markers.push(marker)
-            infowindow.open(map, marker);
+            markers.push(marker);
 
-            var linkURL = becomes.pinURL;
             marker.addListener('click', function () {
-                window.open(linkURL);
+                infowindow.open(map, marker);
+            });
+
+            $('#viewPinInfo').on('click', function () {
+                infowindow.open(map, marker);
+            });
+
+            $('#clearPinInfo').on('click', function () {
+                infowindow.close(map, marker);
             });
 
         });
-
     };
 
     // Pins loaded console log
-    console.log("markers pinned")
-    // console.log(markers)
-    // console.log(movers.lat);
-    // console.log(movers.lng);
+    // console.log("markers pinned")
 };
 
 // Clear out pin function for when boxes are unchecked and then reload
