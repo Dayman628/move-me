@@ -87,6 +87,10 @@ input.checkbox {
   overflow: auto;
 }
 
+.level {
+  color: rgb(83, 155, 155);
+}
+
 .input {
   width: 240px;
 }
