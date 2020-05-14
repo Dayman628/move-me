@@ -59,7 +59,6 @@ function mapCenter(coords) {
     map.setCenter(coords);
 }
 
-
 // Load icons function to be called when Yelp list is loaded
 function loadIcons() {
 
@@ -84,7 +83,7 @@ function loadIcons() {
     };
 
     // Conversion of coordinates and integration of icon markers into pins
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 10; i++) {
         // Empty objects for the pin information
         var movers = {};
         var storage = {};
@@ -173,9 +172,6 @@ function loadIcons() {
 
         });
     };
-
-    // Pins loaded console log
-    // console.log("markers pinned")
 };
 
 // Clear out pin function for when boxes are unchecked and then reload

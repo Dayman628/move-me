@@ -127,10 +127,5 @@ $(".filter").on("change", function (event) {
     console.log(results);
     // deleteMarkers();
     // loadIcons();
-<<<<<<< HEAD
-})
-=======
-})
 
-
->>>>>>> f53f450be94b3ebb23ca7460bad1aa3ce03e9599
+})
