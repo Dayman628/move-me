@@ -7,7 +7,9 @@ function getWeather(){
   var latitude = currentLocation.lat;
 
   var queryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + latitude + "&lon=" + longitude + "&exclude=hourly&appid=" + APIKey; 
-    
+  var queryCityURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&appid=" + APIKey;
+
+  
   $.ajax({
     url: queryURL,
     method: "GET" 
@@ -24,13 +26,13 @@ function getWeather(){
     weatherSpotDiv.css('background-image', 'linear-gradient(to bottom, rgba(140,212,212,0), rgba(140,212,212,1))');
     weatherSpotDiv.css('border','15px 50px 30px 5px')
 
-    var cityName = $("<h3>");
-    weatherSpotDiv.append(cityName);
-    cityName.css("font-size", "20px");
-    cityName.text("Weather Forecast for your city")
-    cityName.css('padding-top','32px')
-    cityName.css('font-weight','bolder')
-    cityName.css('font-family', 'Amatic SC cursive')
+    // var cityName = $("<h3>");
+    // weatherSpotDiv.append(cityName);
+    // cityName.css("font-size", "20px");
+    // cityName.text("Weather Forecast for your city")
+    // cityName.css('padding-top','32px')
+    // cityName.css('font-weight','bolder')
+    // cityName.css('font-family', 'Amatic SC cursive')
 
 
 
@@ -83,6 +85,36 @@ function getWeather(){
       dayOneDiv.text(tempFMax + "°F   " + " / " + tempFMin + "°F  ");    
     }
   });
+
+  $.ajax({
+    url: queryCityURL,
+    method: "GET" 
+  }).then(function(response) {
+    console.log(response)
+
+    var weatherSpotDiv = $("#weatherSpot");
+    weatherSpotDiv.css('text-align','center');
+   // weatherSpotDiv.css('padding-left','440px');
+
+
+    var cityName = $("<h3>");
+    var cityDiv  = $("#cityName")
+    cityDiv.append(cityName);
+    cityName.css("font-size", "20px");
+    cityName.text("Weather Forecast for your city")
+    cityName.css('padding-top','32px')
+    cityName.css('font-weight','bolder')
+    cityName.css('font-family', 'Amatic SC cursive')
+    var currentCity = response.name;
+    console.log(currentCity)
+    cityName.text(currentCity)
+  })
+
+
+
+
+
+
 }
 
 
