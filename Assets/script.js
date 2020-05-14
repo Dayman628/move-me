@@ -1,13 +1,4 @@
-// on click, removeClass("hidden") for the second section, and addClass("hidden") to first page section and the background image
-// get APIs working
-// add improvements and functionalities once basic MVP works
-
-// Live current location
-// var currentLocation = {
-//     lat: '',
-//     lng: ''
-// };
-
+// Main screen variable for when the show
 var mainScreen = false;
 
 // function for when the current location changes
