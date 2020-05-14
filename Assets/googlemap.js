@@ -59,8 +59,6 @@ function mapCenter(coords) {
     map.setCenter(coords);
 }
 
-
-
 // Load icons function to be called when Yelp list is loaded
 function loadIcons() {
 
@@ -85,7 +83,7 @@ function loadIcons() {
     };
 
     // Conversion of coordinates and integration of icon markers into pins
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 10; i++) {
         // Empty objects for the pin information
         var movers = {};
         var storage = {};
@@ -174,7 +172,27 @@ function loadIcons() {
 
         });
     };
-
-    // Pins loaded console log
-    // console.log("markers pinned")
 };
+
+// Clear out pin function for when boxes are unchecked and then reload
+
+
+// when a user unchecks, need to clear it out, and then RECHECK
+
+// Removes the markers from the map, but keeps them in the array
+//   function clearMarkers() {
+//     loadIcons.setMap(null);
+// }
+
+
+// For loop to pin result, unused at the moment
+// function setMarker() {
+//     // for (let i = 0; i < pins.length; i++) {
+//     var marker = new google.maps.Marker({
+//         position: pins.position,
+//         icon: icons[pins.type].icon,
+//         map: map
+//     });
+//     // };
+// };
+// setMarker();

@@ -127,6 +127,5 @@ $(".filter").on("change", function (event) {
     console.log(results);
     // deleteMarkers();
     // loadIcons();
+
 })
-
-
