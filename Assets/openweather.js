@@ -77,7 +77,7 @@ function getWeather(){
 
     var weatherSpotDiv = $("#weatherSpot");
     weatherSpotDiv.css('text-align','center');
-
+    console.log(response)
     var cityName = $("<h3>");
     var cityDiv  = $("#cityName")
     cityDiv.append(cityName);
