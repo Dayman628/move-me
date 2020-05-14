@@ -2,7 +2,6 @@
     box-sizing: border-box;
   }
 
-
 .main-page {
   display: block;
   position: absolute;
@@ -31,13 +30,14 @@ footer {
 .front-page {
     text-align: center;
     position: fixed;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
 }
 
 .title {
+  text-align: center;
   font-family: 'Amatic SC', cursive;
   color:rgb(122, 202, 202);
   margin-top: 0px;
@@ -52,9 +52,6 @@ footer {
     height: 200%;
   }
 
-  .navbar {
-    background-color: transparent;
-  }
 
   #bg img {
     position: absolute; 
