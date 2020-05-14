@@ -26,7 +26,7 @@
         <input class="input" id="userAddress" type="text" placeholder="Search an Address!">
       </p>
       <p class="control">
-        <a class="button is-primary" id="searchBtn">
+        <a class="button is-primary" style="float: left;" id="searchBtn">
           Search
         </a>
       </p>
@@ -48,10 +48,6 @@
 
   <!-- This is the second page, that becomes visible when user submits address -->
   <section class="section main-page hidden">
-        <!-- this is where the weather will go -->
-
-        <div id="weatherSpot"></div>
-
     <br>
     <br> 
 
@@ -60,6 +56,7 @@
         <div class="nav-item navbar-brand" id="company-logo">
           <img src="./Assets/images/movemebanner.png" alt="placeholder" />
         </div>
+        <div id="cityName"></div>
         <div id="weatherSpot"></div>
         <div class="column buttons">
           <input class="input" type="text" id="newAddress" placeholder="Search a different Address!">
