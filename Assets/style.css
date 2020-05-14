@@ -92,6 +92,10 @@ input.checkbox {
 }
 
 .input {
+  width: 100%;
+}
+
+#newAddress {
   width: 240px;
 }
 
