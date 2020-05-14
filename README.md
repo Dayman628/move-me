@@ -16,6 +16,9 @@ As an individual with a busy schedule, I’m in need of assistance with my movin
 Deployed website can be found at [this link](https://move-me-by-glass.netlify.app/).
 
 ## Usage 
+When first entering the site, use is able to get their current address, or when the address is entered into the search bar, address may autocomplete if you want it to.
+![Address usage](./Assets/images/Readme_frontpage.PNG)
+
 
 
 ## Live Demo
