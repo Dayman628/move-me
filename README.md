@@ -6,9 +6,8 @@ The MoveMe app is a helpful tool for finding movers, storage, or where to rent a
 # Contents
 1. [User Story](#user-story)
 2. [Usage](#usage)
-3. [Live Demo](#live-demo)
-4. [Built With](#built-with)
-5. [Authors](#authors)
+3. [Built With](#built-with)
+4. [Authors](#authors)
 
 ## User Story
 
@@ -29,22 +28,19 @@ Each icon on the map displays a different filter - movers, storage, and rent a t
 
 ![Map markers](./Assets/images/mapMarkers.PNG)
 
-## Live Demo
-
-
 
 ## Built With
 
+APIs:
 - [Google Maps API](https://developers.google.com/maps/documentation/javascript/tutorial) - Pulls in locations of the city searched
 - [Yelp API](https://www.yelp.com/developers) - Database used to connect google maps to places nearby and their reviews
 - [Weather API](https://openweathermap.org/) - You are able to see the weather in the area you are moving to 
+
+HTML/CSS:
 - [Bulma](https://bulma.io/) - CSS framework used
 - [fontawesome](https://fontawesome.com/) - used for the icons
-- [Google Fonts](https://fonts.google.com/) - the title's font
+- [Google Fonts](https://fonts.google.com/) - used for the title's font
 
 
 ## Authors
 See the list of [contributors](https://github.com/Dayman628/move-me/graphs/contributors) who participated in this project.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
