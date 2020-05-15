@@ -92,13 +92,3 @@ function getWeather(){
     cityName.text("Weather Forecast for "+ currentCity)
   })
 }
-
-
-
-
-
-
-
-
-
-
