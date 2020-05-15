@@ -83,6 +83,7 @@ input.checkbox {
 #results {
   max-height: 200px;
   overflow: auto;
+  margin-right: 15px;
 }
 
 .level {
@@ -99,4 +100,16 @@ input.checkbox {
 
 .list-item:hover {
   background-color: lightblue;
+}
+
+#viewPinInfo {
+  z-index: 1;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#clearPinInfo {
+  z-index: 1;
+  margin-bottom: 20px;
+  text-align: center;
 }
