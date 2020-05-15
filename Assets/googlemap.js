@@ -173,26 +173,3 @@ function loadIcons() {
         });
     };
 };
-
-// Clear out pin function for when boxes are unchecked and then reload
-
-
-// when a user unchecks, need to clear it out, and then RECHECK
-
-// Removes the markers from the map, but keeps them in the array
-//   function clearMarkers() {
-//     loadIcons.setMap(null);
-// }
-
-
-// For loop to pin result, unused at the moment
-// function setMarker() {
-//     // for (let i = 0; i < pins.length; i++) {
-//     var marker = new google.maps.Marker({
-//         position: pins.position,
-//         icon: icons[pins.type].icon,
-//         map: map
-//     });
-//     // };
-// };
-// setMarker();
