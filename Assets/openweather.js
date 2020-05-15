@@ -1,6 +1,7 @@
 
 function getWeather(){
   $("#weatherSpot").html("");
+  $("#cityName").html("");
   var APIKey = "644e2fd49d4e3e04ae6b482ca8428be6";
 
   var longitude = currentLocation.lng;
@@ -26,23 +27,11 @@ function getWeather(){
     weatherSpotDiv.css('background-image', 'linear-gradient(to bottom, rgba(140,212,212,0), rgba(140,212,212,1))');
     weatherSpotDiv.css('border','15px 50px 30px 5px')
 
-    // var cityName = $("<h3>");
-    // weatherSpotDiv.append(cityName);
-    // cityName.css("font-size", "20px");
-    // cityName.text("Weather Forecast for your city")
-    // cityName.css('padding-top','32px')
-    // cityName.css('font-weight','bolder')
-    // cityName.css('font-family', 'Amatic SC cursive')
-
-
-
     for (var i = 0; i < 5; i++) {
       var eachDayDiv = $("<div>");
       eachDayDiv.addClass(dayArray[i]);
       eachDayDiv.css('padding', '5px');
-      //eachDayDiv.css('border', '5px solid rgb(140, 212, 212)'); 
       eachDayDiv.css('border-radius','10%');
-      //eachDayDiv.css('background-color','transparent')
       weatherSpotDiv.append(eachDayDiv);
       
       // Displaying day of the week
@@ -51,9 +40,7 @@ function getWeather(){
       timeValue.css("font-size", "16px");
       // JSON timestamp
       var timeStamp = response.daily[i].dt;
-     // timeValue.css('color','rgb(140, 212, 212)')
       timeValue.css('font-weight','bold')
-    
       // Convert timestamp to milliseconds
       var date = new Date(timeStamp*1000);
       var days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
@@ -75,46 +62,35 @@ function getWeather(){
       var dayOneDiv = $("<div>");
       eachDayDiv.append(dayOneDiv);
       dayOneDiv.addClass(tempArray[i]);
-      dayOneDiv.css("font-size", "12px");
-      //dayOneDiv.css('font-weight','bolder')
-      //dayOneDiv.css('color','rgb(140, 212, 212)')
-    
-      // to fahrenheit
+      dayOneDiv.css("font-size", "12px");    
+      // Converting to fahrenheit
       var tempFMax = (parseInt(response.daily[i].temp.max - 273.15) * 1.80 + 32).toFixed(0);
       var tempFMin = (parseInt(response.daily[i].temp.min - 273.15) * 1.80 + 32).toFixed(0);
       dayOneDiv.text(tempFMax + "°F   " + " / " + tempFMin + "°F  ");    
     }
   });
 
+  // Another AJAX call to pull City Name
   $.ajax({
     url: queryCityURL,
     method: "GET" 
   }).then(function(response) {
-    console.log(response)
 
     var weatherSpotDiv = $("#weatherSpot");
     weatherSpotDiv.css('text-align','center');
-   // weatherSpotDiv.css('padding-left','440px');
-
-
+    console.log(response)
     var cityName = $("<h3>");
     var cityDiv  = $("#cityName")
     cityDiv.append(cityName);
-    cityName.css("font-size", "20px");
-    cityName.text("Weather Forecast for your city")
-    cityName.css('padding-top','32px')
+    cityName.css("font-size", "15px");
+    cityName.css("text-align","center")
+    cityName.css('padding-top','20px')
+    cityName.css('padding-bottom','10px')
     cityName.css('font-weight','bolder')
-    cityName.css('font-family', 'Amatic SC cursive')
+    cityName.css('font-family', 'sans-serif')
     var currentCity = response.name;
-    console.log(currentCity)
-    cityName.text(currentCity)
+    cityName.text("Weather Forecast for "+ currentCity)
   })
-
-
-
-
-
-
 }
 
 
@@ -126,45 +102,3 @@ function getWeather(){
 
 
 
-
-
-  // ------------- working code 050920 for a day if the above code does not work -----------------//
-
-  // $("#weatherSpot").css('text-align','center');
-  // $("#weatherSpot").css('background-color','DeepSkyBlue');
-  // var timeValue = $("<p>");
-  // $("#weatherSpot").append(timeValue);
-  // timeValue.css("font-size", "10px");
-  // // JSON timestamp
-  // var timeStamp = response.daily[0].dt;
-   
-  // // Convert timestamp to milliseconds
-  // var date = new Date(timeStamp*1000);
-  // var days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  // var dayOfWeek = days[date.getDay()]
-  // console.log(dayOfWeek)
-  // timeValue.text(dayOfWeek)
-
-  // var iconEl = $("<img>");
-  // $("#weatherSpot").append(iconEl);
-  // var iconId = response.daily[0].weather[0].icon;
-  // var iconLink = "http://openweathermap.org/img/wn/" + iconId + "@2x.png";
-  // iconEl.attr("src",iconLink);
-  // iconEl.width(30); 
-  // iconEl.height(30);
-
-
-  // var dayOneDiv = $("<div>");
-  // $("#weatherSpot").append(dayOneDiv);
-  // dayOneDiv.addClass("dayOne");
-  // dayOneDiv.css("font-size", "10px");
-  // // for (var i = 0; i < response.daily.length; i++) {
-
-  //  // to fahrenheit
-  // var tempFMax = (parseInt(response.daily[0].temp.max - 273.15) * 1.80 + 32).toFixed(0);
-  // var tempFMin = (parseInt(response.daily[0].temp.min - 273.15) * 1.80 + 32).toFixed(0);
-
-  // // add temp content to html
-  // //$(".temp").text("Temparature: " + tempF.toFixed(2) + " °F");
-  //   $(".dayOne").text("H: " + tempFMax + "°F   " + "  L: " + tempFMin + "°F");
-  // //}
